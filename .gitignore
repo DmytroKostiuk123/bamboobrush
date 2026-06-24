@@ -1,0 +1,6 @@
+# Local dev-only tooling (PowerShell preview server)
+.claude/
+
+# OS / editor junk
+Thumbs.db
+.DS_Store

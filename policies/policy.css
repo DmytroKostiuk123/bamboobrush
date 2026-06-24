@@ -1,0 +1,26 @@
+/* ===== Policy pages ===== */
+.policy { padding: 48px 0 80px; }
+.policy__back { display: inline-flex; align-items: center; gap: 6px; font-size: .9rem; color: var(--muted); margin-bottom: 22px; }
+.policy__back:hover { color: var(--green-500); }
+.policy h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 6px; }
+.policy__updated { color: var(--muted); font-size: .88rem; margin-bottom: 30px; }
+
+.policy__nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 38px; }
+.policy__nav a { font-size: .84rem; padding: 7px 14px; border: 1px solid var(--line); border-radius: 100px; color: var(--muted); transition: border-color .2s, color .2s; }
+.policy__nav a:hover { border-color: var(--green-700); color: var(--ink); }
+.policy__nav a.is-active { border-color: var(--green-700); background: var(--green-100); color: var(--ink); }
+
+.policy__body { max-width: 760px; }
+.policy__body h2 { font-size: 1.45rem; margin: 38px 0 12px; }
+.policy__body h3 { font-family: var(--font-body); font-weight: 700; font-size: 1.1rem; margin: 22px 0 8px; }
+.policy__body p { color: var(--ink); line-height: 1.75; margin-bottom: 14px; }
+.policy__body ul { padding-left: 1.25rem; margin: 0 0 16px; }
+.policy__body li { color: var(--ink); line-height: 1.7; margin-bottom: 8px; }
+.policy__body a { color: var(--green-500); text-decoration: underline; }
+.policy__body strong { font-weight: 700; }
+
+.policy__box { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 26px; margin: 22px 0; }
+.policy__box p { margin-bottom: 6px; }
+.policy__box p:last-child { margin-bottom: 0; }
+
+.policy__note { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); margin-top: 44px; padding-top: 18px; }
