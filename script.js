@@ -116,7 +116,7 @@
         const li = document.createElement("li");
         li.className = "cart-item";
         li.innerHTML = `
-          <div class="cart-item__img"><img src="${item.img}" alt="" /></div>
+          <div class="cart-item__img"><img src="${item.img}" alt="" loading="lazy" decoding="async" /></div>
           <div class="cart-item__info">
             <div class="cart-item__name">${t("prod_title")}</div>
             <div class="cart-item__variant">${t("js_variant")}</div>
