@@ -2,8 +2,11 @@
 (() => {
   "use strict";
 
-  const PRODUCT = { id: "tb6", name: "Tandborste 6-pack", price: 230, img: "assets/product-1.jpg" };
-  const FREE_SHIP = 350;
+  // Display name/variant come from the i18n dictionary (prod_title / js_variant), not from here.
+  const PRODUCT = { id: "tb6", price: 230, img: "assets/product-1.jpg" };
+  const FREE_SHIP = 350;   // kr — also stated in copy (announce bar, FAQ, cart, product meta)
+  const MIN_QTY = 1;
+  const MAX_QTY = 20;
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -14,24 +17,19 @@
   let cart = [];
   let pdpQty = 1;
 
-  /* ---------- Theme toggle (default: time-based — dark 20:00–06:00, light otherwise) ---------- */
+  /* ---------- Theme toggle ---------- */
+  // The inline <head> script already applied the correct theme (saved choice, else
+  // the time-based default) before paint — here we just sync the UI and wire the toggle.
   const root = document.documentElement;
   const themeToggle = $("#themeToggle");
-  const timeTheme = () => {
-    const h = new Date().getHours();
-    return (h >= 20 || h < 6) ? "dark" : "light";
-  };
-  function applyTheme(t, persist) {
-    root.setAttribute("data-theme", t);
-    if (persist) { try { localStorage.setItem("bb-theme", t); } catch (e) {} }
-    themeToggle.setAttribute("aria-pressed", String(t === "dark"));
+  function applyTheme(theme, persist) {
+    root.setAttribute("data-theme", theme);
+    if (persist) { try { localStorage.setItem("bb-theme", theme); } catch (e) {} }
+    themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
     const meta = $('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", t === "dark" ? "#0f140d" : "#f7f4ec");
+    if (meta) meta.setAttribute("content", getComputedStyle(root).getPropertyValue("--cream").trim());
   }
-  // Respect a saved manual choice; otherwise use the time-based default (not persisted, so it re-evaluates each visit).
-  let savedTheme = null;
-  try { savedTheme = localStorage.getItem("bb-theme"); } catch (e) {}
-  applyTheme(savedTheme || root.getAttribute("data-theme") || timeTheme(), false);
+  applyTheme(root.getAttribute("data-theme"), false);
   themeToggle.addEventListener("click", () => {
     applyTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark", true);
   });
@@ -69,11 +67,11 @@
   /* ---------- PDP quantity ---------- */
   const qtyVal = $("#qtyVal");
   $("#qtyMinus").addEventListener("click", () => {
-    pdpQty = Math.max(1, pdpQty - 1);
+    pdpQty = Math.max(MIN_QTY, pdpQty - 1);
     qtyVal.textContent = pdpQty;
   });
   $("#qtyPlus").addEventListener("click", () => {
-    pdpQty = Math.min(20, pdpQty + 1);
+    pdpQty = Math.min(MAX_QTY, pdpQty + 1);
     qtyVal.textContent = pdpQty;
   });
 
@@ -132,7 +130,8 @@
       });
     }
 
-    $("#cartTotal").textContent = kr(totalSum());
+    const sum = totalSum();
+    $("#cartTotal").textContent = kr(sum);
 
     const n = totalQty();
     count.textContent = n;
@@ -140,7 +139,6 @@
 
     // free shipping progress
     const ship = $("#cartShip");
-    const sum = totalSum();
     if (cart.length === 0) {
       ship.innerHTML = "";
     } else if (sum >= FREE_SHIP) {
@@ -241,12 +239,7 @@
   }
 
   /* ---------- Scroll reveal ---------- */
-  const revealTargets = [
-    ".section-head", ".card", ".step", ".review",
-    ".product__gallery", ".product__info", ".impact__copy", ".impact__visual",
-    ".cta__inner", ".strip__item",
-  ];
-  const els = revealTargets.flatMap((s) => $$(s));
+  const els = $$(".section-head, .card, .step, .product__gallery, .product__info, .impact__copy, .impact__visual, .strip__item");
   els.forEach((el, i) => {
     el.setAttribute("data-reveal", "");
     el.style.transitionDelay = `${(i % 4) * 60}ms`;

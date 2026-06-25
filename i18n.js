@@ -284,22 +284,22 @@
     return str;
   }
 
+  function apply(attr, prop) {
+    var nodes = document.querySelectorAll("[" + attr + "]");
+    for (var i = 0; i < nodes.length; i++) {
+      var val = DICT[lang][nodes[i].getAttribute(attr)];
+      if (val != null) nodes[i][prop] = val;
+    }
+  }
+
   function applyDom() {
     document.documentElement.setAttribute("lang", lang);
     document.title = t("page_title");
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", t("page_desc"));
 
-    var nodes = document.querySelectorAll("[data-i18n]");
-    for (var i = 0; i < nodes.length; i++) {
-      var key = nodes[i].getAttribute("data-i18n");
-      if (DICT[lang][key] != null) nodes[i].textContent = DICT[lang][key];
-    }
-    var html = document.querySelectorAll("[data-i18n-html]");
-    for (var j = 0; j < html.length; j++) {
-      var hkey = html[j].getAttribute("data-i18n-html");
-      if (DICT[lang][hkey] != null) html[j].innerHTML = DICT[lang][hkey];
-    }
+    apply("data-i18n", "textContent");
+    apply("data-i18n-html", "innerHTML");
 
     var toggle = document.getElementById("langToggle");
     if (toggle) {
