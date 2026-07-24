@@ -8,6 +8,7 @@
   }
   try {
     var saved = localStorage.getItem("bb-theme");
+    if (saved !== "dark" && saved !== "light") saved = null; // allowlist stored value
     root.setAttribute("data-theme", saved || timeTheme());
   } catch (e) { root.setAttribute("data-theme", timeTheme()); }
 

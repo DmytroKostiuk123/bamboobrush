@@ -5,21 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="BambooBrush – plastfria, komposterbara tandborstar i bambu. Tillverkade av naturligt material, helt utan plast eller lim. Snabb frakt i Sverige." />
   <meta name="theme-color" content="#0f140d" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>BambooBrush 2.0 – Plastfria tandborstar i bambu</title>
-  <!-- Apply theme + language before paint. Default is time-based: dark 20:00–06:00, light otherwise. A manual choice (saved) always wins. -->
-  <script>
-    (function () {
-      try {
-        var saved = localStorage.getItem("bb-theme");
-        var h = new Date().getHours();
-        var auto = (h >= 20 || h < 6) ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", saved || auto);
-        document.documentElement.setAttribute("lang", localStorage.getItem("bb-lang") || "sv");
-      } catch (e) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    })();
-  </script>
+  <!-- Pre-paint theme/language boot (synchronous on purpose — prevents a flash of wrong theme) -->
+  <script src="boot.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet" />
