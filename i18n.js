@@ -7,7 +7,7 @@
       page_title: "BambooBrush 2.0 – Plastfria tandborstar i bambu",
       page_desc: "BambooBrush – plastfria, komposterbara tandborstar i bambu. Tillverkade av naturligt material, helt utan plast eller lim. Snabb frakt i Sverige.",
 
-      ann_ship: "🌱 Fri frakt över 350 kr",
+      ann_ship: "🚚 Frakt 49 kr i hela Sverige",
       ann_compost: "♻️ 100% komposterbar",
       ann_delivery: "🚚 Snabb leverans i hela Sverige",
       ann_micro: "🧬 Fria från mikroplast",
@@ -41,7 +41,7 @@
       feat_4: "♻️ Allt är komposterbart",
       price_save: "Spara 60 kr",
       add_cart: "Lägg i varukorg",
-      prod_meta: "🔒 Säker betalning · 30 dagars öppet köp · Fri frakt över 350 kr",
+      prod_meta: "🔒 Säker betalning · 30 dagars öppet köp · Frakt 49 kr",
 
       why_eyebrow: "Varför BambooBrush?",
       why_h2: 'Litet byte. <span class="hl">Stor</span> skillnad.',
@@ -93,7 +93,7 @@
       faq_q3: "Hur länge håller ett 6-pack?",
       faq_a3: "Tandläkare rekommenderar byte varannan månad. Ett 6-pack räcker alltså i cirka 1 år för en person.",
       faq_q4: "Vad kostar frakten?",
-      faq_a4: "Frakten är 49 kr per order och fri vid köp över 350 kr. Vi skickar inom 24 timmar och leverans sker normalt inom 2–4 arbetsdagar.",
+      faq_a4: "Frakten är 49 kr per order och skickas med DHL. Vi skickar inom 24 timmar och leverans sker normalt inom 2–4 arbetsdagar.",
       faq_q5: "Kan jag returnera om jag ändrar mig?",
       faq_a5: "Självklart. Du har 30 dagars öppet köp på oöppnade förpackningar. Kontakta oss så ordnar vi returen.",
 
@@ -126,21 +126,20 @@
       cart_empty: "Din varukorg är tom. 🌿",
       cart_total: "Summa",
       cart_checkout: "Till kassan",
-      cart_secure: "🔒 Säker betalning · Fri frakt över 350 kr",
+      cart_secure: "🔒 Säker betalning · Frakt 49 kr (DHL)",
 
       js_variant: "Naturell bambu",
       js_added: "✓ {qty} × {name} tillagd",
       js_empty_toast: "Din varukorg är tom 🌿",
       js_checkout: "Tack! Demobeställning på {sum} 🌍",
-      js_freeship_have: "🎉 Du har fri frakt!",
-      js_freeship_left: "Handla för {left} till för fri frakt",
+      js_ship_note: "🚚 Frakt 49 kr (DHL) tillkommer i kassan",
     },
 
     en: {
       page_title: "BambooBrush 2.0 – Plastic-free bamboo toothbrushes",
       page_desc: "BambooBrush – plastic-free, compostable bamboo toothbrushes. Made from natural material, completely without plastic or glue. Fast shipping within Sweden.",
 
-      ann_ship: "🌱 Free shipping over 350 kr",
+      ann_ship: "🚚 Flat 49 kr shipping across Sweden",
       ann_compost: "♻️ 100% compostable",
       ann_delivery: "🚚 Fast delivery across Sweden",
       ann_micro: "🧬 Free from microplastics",
@@ -174,7 +173,7 @@
       feat_4: "♻️ Everything is compostable",
       price_save: "Save 60 kr",
       add_cart: "Add to cart",
-      prod_meta: "🔒 Secure payment · 30-day returns · Free shipping over 350 kr",
+      prod_meta: "🔒 Secure payment · 30-day returns · 49 kr shipping",
 
       why_eyebrow: "Why BambooBrush?",
       why_h2: 'Small switch. <span class="hl">Big</span> difference.',
@@ -226,7 +225,7 @@
       faq_q3: "How long does a 6-pack last?",
       faq_a3: "Dentists recommend replacing your brush every two months. So a 6-pack lasts about 1 year for one person.",
       faq_q4: "What does shipping cost?",
-      faq_a4: "Shipping is 49 kr per order, and free on orders over 350 kr. We dispatch within 24 hours and delivery normally takes 2–4 business days.",
+      faq_a4: "Shipping is a flat 49 kr per order, sent with DHL. We dispatch within 24 hours and delivery normally takes 2–4 business days.",
       faq_q5: "Can I return it if I change my mind?",
       faq_a5: "Of course. You have 30 days' right of return on unopened packages. Contact us and we'll arrange the return.",
 
@@ -259,14 +258,13 @@
       cart_empty: "Your cart is empty. 🌿",
       cart_total: "Total",
       cart_checkout: "Checkout",
-      cart_secure: "🔒 Secure payment · Free shipping over 350 kr",
+      cart_secure: "🔒 Secure payment · 49 kr shipping (DHL)",
 
       js_variant: "Natural bamboo",
       js_added: "✓ {qty} × {name} added",
       js_empty_toast: "Your cart is empty 🌿",
       js_checkout: "Thanks! Demo order of {sum} 🌍",
-      js_freeship_have: "🎉 You've got free shipping!",
-      js_freeship_left: "Add {left} more for free shipping",
+      js_ship_note: "🚚 49 kr shipping (DHL) added at checkout",
     },
   };
 

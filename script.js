@@ -4,9 +4,9 @@
 
   // Display name/variant come from the i18n dictionary (prod_title / js_variant), not from here.
   const PRODUCT = { id: "tb6", price: 230, img: "assets/product-1.jpg" };
-  const FREE_SHIP = 350;   // kr — also stated in copy (announce bar, FAQ, cart, product meta)
   const MIN_QTY = 1;
   const MAX_QTY = 20;
+  const STRIPE_URL = "https://buy.stripe.com/00w14ofmm9b93UN4WB2B202";
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -137,16 +137,8 @@
     count.textContent = n;
     count.hidden = n === 0;
 
-    // free shipping progress (width set via CSSOM, not a style attribute, to satisfy strict CSP)
-    const ship = $("#cartShip");
-    if (cart.length === 0) {
-      ship.innerHTML = "";
-    } else {
-      const free = sum >= FREE_SHIP;
-      const msg = free ? t("js_freeship_have") : t("js_freeship_left", { left: kr(FREE_SHIP - sum) });
-      ship.innerHTML = `${msg}<div class="bar"><i></i></div>`;
-      ship.querySelector(".bar i").style.width = (free ? 100 : Math.min(100, (sum / FREE_SHIP) * 100)) + "%";
-    }
+    // flat-rate shipping note (the 49 kr DHL fee is added by Stripe at checkout)
+    $("#cartShip").textContent = cart.length === 0 ? "" : t("js_ship_note");
   }
 
   function bumpCount() {
@@ -197,10 +189,7 @@
   /* ---------- Checkout (demo) ---------- */
   $("#checkout").addEventListener("click", () => {
     if (cart.length === 0) { toast(t("js_empty_toast")); return; }
-    toast(t("js_checkout", { sum: kr(totalSum()) }));
-    cart = [];
-    renderCart();
-    closeCart();
+    window.location.href = STRIPE_URL; // hand off to Stripe hosted checkout
   });
 
   /* ---------- Re-render dynamic cart text on language change ---------- */
