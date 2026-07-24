@@ -137,16 +137,15 @@
     count.textContent = n;
     count.hidden = n === 0;
 
-    // free shipping progress
+    // free shipping progress (width set via CSSOM, not a style attribute, to satisfy strict CSP)
     const ship = $("#cartShip");
     if (cart.length === 0) {
       ship.innerHTML = "";
-    } else if (sum >= FREE_SHIP) {
-      ship.innerHTML = `${t("js_freeship_have")}<div class="bar"><i style="width:100%"></i></div>`;
     } else {
-      const left = FREE_SHIP - sum;
-      const pct = Math.min(100, (sum / FREE_SHIP) * 100);
-      ship.innerHTML = `${t("js_freeship_left", { left: kr(left) })}<div class="bar"><i style="width:${pct}%"></i></div>`;
+      const free = sum >= FREE_SHIP;
+      const msg = free ? t("js_freeship_have") : t("js_freeship_left", { left: kr(FREE_SHIP - sum) });
+      ship.innerHTML = `${msg}<div class="bar"><i></i></div>`;
+      ship.querySelector(".bar i").style.width = (free ? 100 : Math.min(100, (sum / FREE_SHIP) * 100)) + "%";
     }
   }
 
