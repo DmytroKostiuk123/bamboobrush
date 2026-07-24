@@ -6,7 +6,7 @@
   const PRODUCT = { id: "tb6", price: 230, img: "assets/product-1.jpg" };
   const MIN_QTY = 1;
   const MAX_QTY = 20;
-  const STRIPE_URL = "https://buy.stripe.com/00w14ofmm9b93UN4WB2B202";
+  const STRIPE_URL = "https://buy.stripe.com/14A3cw8XYdrpajb3Sx2B203";
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
