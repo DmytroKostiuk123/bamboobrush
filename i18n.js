@@ -83,6 +83,15 @@
       step3_h: "Gräv ner den",
       step3_p: "Gräv ner hela tandborsten i jorden eller lägg den i komposten – naturen tar hand om resten.",
 
+      ngo_eyebrow: "För planeten",
+      ngo_h2: 'Goda krafter för en <span class="hl">plastfri</span> värld',
+      ngo_intro: "Vi hyllar arbetet dessa organisationer gör mot plast och för naturen. Stötta dem gärna du också – varje litet bidrag räknas.",
+      ngo1_p: "Kämpar mot nedskräpning och plast i den svenska naturen.",
+      ngo2_p: "Sveriges största miljöorganisation – för natur och hållbarhet.",
+      ngo3_p: "Arbetar globalt för att stoppa mikroplaster vid källan.",
+      ngo4_p: "Utvecklar teknik för att rensa haven från plast.",
+      ngo_visit: "Besök →",
+
       faq_eyebrow: "Vanliga frågor",
       faq_h2: "Allt du undrar",
       faq_intro: 'Hittar du inte svaret? <a href="mailto:info@bamboobrush.se">Kontakta oss</a> så hjälper vi dig.',
@@ -214,6 +223,15 @@
       step2_p: "Swap your brush every two months – one pack lasts a long time.",
       step3_h: "Bury it",
       step3_p: "Bury the whole toothbrush in the soil or pop it in the compost – nature takes care of the rest.",
+
+      ngo_eyebrow: "For the planet",
+      ngo_h2: 'Good forces for a <span class="hl">plastic-free</span> world',
+      ngo_intro: "We admire the work these organizations do against plastic and for nature. Support them too — every little bit counts.",
+      ngo1_p: "Fights litter and plastic in Sweden's outdoors.",
+      ngo2_p: "Sweden's largest environmental organization — for nature and sustainability.",
+      ngo3_p: "Works globally to stop microplastics at the source.",
+      ngo4_p: "Develops technology to clean plastic from the oceans.",
+      ngo_visit: "Visit →",
 
       faq_eyebrow: "FAQ",
       faq_h2: "Everything you're wondering",

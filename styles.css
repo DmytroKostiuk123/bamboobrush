@@ -328,6 +328,19 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .step h3 { font-size: 1.3rem; margin-bottom: 8px; }
 .step p { color: var(--muted); }
 
+/* ===== Causes / NGOs ===== */
+.ngo { padding: 84px 0; background: var(--white); }
+.ngo__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.ngo-card {
+  display: flex; flex-direction: column; gap: 8px; color: inherit;
+  background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px; transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.ngo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--green-700); }
+.ngo-card h3 { font-size: 1.15rem; }
+.ngo-card p { color: var(--muted); font-size: .92rem; flex: 1; }
+.ngo-card__link { color: var(--green-500); font-weight: 600; font-size: .9rem; margin-top: 6px; }
+
 /* ===== FAQ ===== */
 .faq { padding: 84px 0; }
 .faq__inner { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; align-items: start; }
@@ -423,13 +436,13 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
   .header__cta { display: none; }
   .hero__inner, .product__inner, .impact__inner, .faq__inner { grid-template-columns: 1fr; }
   .hero__visual { min-height: 360px; order: -1; }
-  .cards, .trust__grid { grid-template-columns: repeat(2, 1fr); }
+  .cards, .trust__grid, .ngo__grid { grid-template-columns: repeat(2, 1fr); }
   .steps__grid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
   .impact__visual { order: -1; }
 }
 @media (max-width: 540px) {
-  .cards, .trust__grid { grid-template-columns: 1fr; }
+  .cards, .trust__grid, .ngo__grid { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr; }
   .strip__inner { gap: 14px; }
   .strip__item { flex: 1 1 40%; }
