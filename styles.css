@@ -371,7 +371,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 }
 .pay-badge--klarna { background: #ffb3c7; border-color: #ffb3c7; color: #17120e; }
 .pay-badge--visa { color: #1a1f71; font-style: italic; }
-.pay-badge--swish { color: #4b2067; }
 
 /* ===== Footer ===== */
 .footer { background: var(--green-900); color: #cfe0d0; padding: 56px 0 24px; }
