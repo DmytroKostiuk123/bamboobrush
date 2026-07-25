@@ -6,6 +6,31 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://bamboobrush.se/blogg/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bamboobrush.se/blogg/hur-ofta-byta-tandborste.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bamboobrush.se/blogg/ar-bambutandborste-bra.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bamboobrush.se/blogg/mikroplaster-i-tandborstar.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bamboobrush.se/blogg/kompostera-tandborsten.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://bamboobrush.se/policies/shipping-policy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>

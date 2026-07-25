@@ -16,6 +16,7 @@
       nav_why: "Varför bambu",
       nav_env: "Miljö",
       nav_faq: "Vanliga frågor",
+      nav_blog: "Blogg",
       buy_now: "Köp nu",
 
       hero_h1: 'Ren munvård – helt utan <span class="hl">mikroplaster</span>.',
@@ -157,6 +158,7 @@
       nav_why: "Why bamboo",
       nav_env: "Environment",
       nav_faq: "FAQ",
+      nav_blog: "Blog",
       buy_now: "Buy now",
 
       hero_h1: 'Clean oral care – free of <span class="hl">microplastics</span>.',
