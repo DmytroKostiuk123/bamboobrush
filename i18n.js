@@ -57,7 +57,7 @@
 
       imp_eyebrow: "Visste du?",
       imp_h2: "Varför mikroplaster är farliga",
-      imp_p: "Forskning visar att mikroplaster kan försvaga cellmembran, utlösa inflammation och härma hormoner i kroppen. Varje gång du borstar med en plasttandborste frigörs små partiklar. Genom ett enkelt byte tar du bort en daglig plastkälla – för din egen hälsa.",
+      imp_p: "Forskning visar att mikroplaster kan försvaga cellmembran, utlösa inflammation och härma hormoner i kroppen. Emaljen är hårdare än borststråna, så varje borstning nöter ner plasten och frigör små partiklar i munnen. Genom ett enkelt byte tar du bort en daglig plastkälla – för din egen hälsa.",
       impact_more: "Läs mer →",
       impact_modal_title: "Små plastpartiklar leder till cellskador",
       impact_modal_p1: "Mikroplaster kan påverka kroppen på flera sätt. När de fastnar i våra celler kan de göra cellmembranet svagare och orsaka läckage som skadar cellen inifrån. De kan även störa mitokondrierna – våra cellers \"kraftverk\" – vilket minskar energiproduktionen och kan leda till ännu mer skada.",
@@ -198,7 +198,7 @@
 
       imp_eyebrow: "Did you know?",
       imp_h2: "Why microplastics are harmful",
-      imp_p: "Research shows microplastics can weaken cell membranes, trigger inflammation and mimic hormones in the body. Every time you brush with a plastic toothbrush, tiny particles are released. With one simple switch you remove a daily source of plastic – for your own health.",
+      imp_p: "Research shows microplastics can weaken cell membranes, trigger inflammation and mimic hormones in the body. Enamel is harder than the bristles, so every brushing wears down the plastic and releases tiny particles into your mouth. With one simple switch you remove a daily source of plastic – for your own health.",
       impact_more: "Read more →",
       impact_modal_title: "Tiny plastic particles cause cell damage",
       impact_modal_p1: "Microplastics can affect the body in several ways. When they lodge in our cells, they can weaken the cell membrane and cause leakage that damages the cell from within. They can also disrupt the mitochondria – our cells' \"power plants\" – which lowers energy production and can lead to even more damage.",
