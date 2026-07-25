@@ -3,6 +3,19 @@
    Stored values are validated against an allowlist before being applied to the DOM. */
 (function () {
   var root = document.documentElement;
+
+  // Anti-clickjacking guard. GitHub Pages can't send X-Frame-Options, and
+  // frame-ancestors is ignored in a <meta> CSP, so if this page is loaded
+  // inside a frame on another origin, break out to the top-level window.
+  try {
+    if (window.top !== window.self) {
+      window.top.location = window.self.location;
+    }
+  } catch (e) {
+    // Cross-origin access threw — we're definitely framed by a foreign site.
+    root.style.display = "none";
+  }
+
   var theme = null, lang = null;
   try {
     theme = localStorage.getItem("bb-theme");

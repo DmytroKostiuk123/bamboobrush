@@ -189,8 +189,12 @@
   /* ---------- Checkout (demo) ---------- */
   $("#checkout").addEventListener("click", () => {
     if (cart.length === 0) { toast(t("js_empty_toast")); return; }
+    // Clamp the outgoing quantity to a valid integer in [MIN_QTY, MAX_QTY].
+    // NOTE: this is only a convenience guard — the browser is not a trust boundary.
+    // The Cloudflare Worker MUST re-validate qty and check the request Origin server-side.
+    const qty = Math.min(MAX_QTY, Math.max(MIN_QTY, Math.trunc(totalQty()) || MIN_QTY));
     // hand off to the Cloudflare Worker, which creates a Stripe Checkout session with the chosen quantity
-    window.location.href = CHECKOUT_URL + "?qty=" + totalQty();
+    window.location.href = CHECKOUT_URL + "?qty=" + qty;
   });
 
   /* ---------- Re-render dynamic cart text on language change ---------- */
