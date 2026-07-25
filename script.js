@@ -6,7 +6,7 @@
   const PRODUCT = { id: "tb6", price: 230, img: "assets/product-1.jpg" };
   const MIN_QTY = 1;
   const MAX_QTY = 20;
-  const STRIPE_URL = "https://buy.stripe.com/14A3cw8XYdrpajb3Sx2B203";
+  const CHECKOUT_URL = "https://bamboobrush-checkout.dmytro-kostiuk123.workers.dev/";
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -189,7 +189,8 @@
   /* ---------- Checkout (demo) ---------- */
   $("#checkout").addEventListener("click", () => {
     if (cart.length === 0) { toast(t("js_empty_toast")); return; }
-    window.location.href = STRIPE_URL; // hand off to Stripe hosted checkout
+    // hand off to the Cloudflare Worker, which creates a Stripe Checkout session with the chosen quantity
+    window.location.href = CHECKOUT_URL + "?qty=" + totalQty();
   });
 
   /* ---------- Re-render dynamic cart text on language change ---------- */
