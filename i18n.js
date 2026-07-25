@@ -4,7 +4,7 @@
 
   var DICT = {
     sv: {
-      page_title: "BambooBrush 2.0 – Plastfria tandborstar i bambu",
+      page_title: "BambooBrush – Plastfria tandborstar i bambu",
       page_desc: "BambooBrush – plastfria, komposterbara tandborstar i bambu. Tillverkade av naturligt material, helt utan plast eller lim. Snabb frakt i Sverige.",
 
       ann_ship: "🚚 Frakt 49 kr i hela Sverige",
@@ -145,7 +145,7 @@
     },
 
     en: {
-      page_title: "BambooBrush 2.0 – Plastic-free bamboo toothbrushes",
+      page_title: "BambooBrush – Plastic-free bamboo toothbrushes",
       page_desc: "BambooBrush – plastic-free, compostable bamboo toothbrushes. Made from natural material, completely without plastic or glue. Fast shipping within Sweden.",
 
       ann_ship: "🚚 Flat 49 kr shipping across Sweden",
