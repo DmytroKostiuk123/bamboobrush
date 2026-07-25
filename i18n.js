@@ -52,7 +52,7 @@
       card2_p: "Våra borst är gjorda av proteinet keratin som kommer från vildsvinshår.",
       card3_h: "Helt komposterbar",
       card3_p: "Hela tandborsten kan komposteras – både bambuhandtaget och de naturliga borsten blir till jord igen.",
-      card4_h: "Mjuknar när du borstar",
+      card4_h: "Skonsam mot emaljen",
       card4_p: "Torrt är galtborst styvt (3–6 GPa), men när man blöter ner den mjuknar den till ≤1 GPa – mjukare än nylon, som ligger kvar på 2–3 GPa även blött.",
 
       imp_eyebrow: "Visste du?",
@@ -193,7 +193,7 @@
       card2_p: "Our bristles are made of a protein called keratin, which comes from wild boar hair.",
       card3_h: "Fully compostable",
       card3_p: "The whole toothbrush can be composted – both the bamboo handle and the natural bristles turn back into soil.",
-      card4_h: "Softens as you brush",
+      card4_h: "Gentle on enamel",
       card4_p: "Dry, boar bristle is stiff (3–6 GPa), but once you wet it down it softens to ≤1 GPa – softer than nylon, which stays at 2–3 GPa even when wet.",
 
       imp_eyebrow: "Did you know?",
