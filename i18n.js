@@ -56,7 +56,7 @@
       card4_p: "Torrt är galtborst styvt (3–6 GPa), men när man blöter ner den mjuknar den till ≤1 GPa – mjukare än nylon, som ligger kvar på 2–3 GPa även blött.",
 
       imp_eyebrow: "Visste du?",
-      imp_h2: "Mikroplaster finns redan i din kropp.",
+      imp_h2: "Varför mikroplaster är farliga",
       imp_p: "Forskning visar att mikroplaster kan försvaga cellmembran, utlösa inflammation och härma hormoner i kroppen. Varje gång du borstar med en plasttandborste frigörs små partiklar. Genom ett enkelt byte tar du bort en daglig plastkälla – för din egen hälsa.",
       impact_more: "Läs mer →",
       impact_modal_title: "Små plastpartiklar leder till cellskador",
@@ -197,7 +197,7 @@
       card4_p: "Dry, boar bristle is stiff (3–6 GPa), but once you wet it down it softens to ≤1 GPa – softer than nylon, which stays at 2–3 GPa even when wet.",
 
       imp_eyebrow: "Did you know?",
-      imp_h2: "Microplastics are already in your body.",
+      imp_h2: "Why microplastics are harmful",
       imp_p: "Research shows microplastics can weaken cell membranes, trigger inflammation and mimic hormones in the body. Every time you brush with a plastic toothbrush, tiny particles are released. With one simple switch you remove a daily source of plastic – for your own health.",
       impact_more: "Read more →",
       impact_modal_title: "Tiny plastic particles cause cell damage",
