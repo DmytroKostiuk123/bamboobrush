@@ -41,7 +41,7 @@
       feat_2: "🪥 Proteinbaserat galtborst",
       feat_3: "🚫 Helt utan plast, lim eller BPA",
       feat_4: "♻️ Allt är komposterbart",
-      price_save: "Spara 60 kr",
+      price_code: "🏷️ 50 kr rabatt med koden SPARA50",
       add_cart: "Lägg i varukorg",
       prod_meta: "🔒 Säker betalning · 30 dagars öppet köp · Frakt 49 kr",
 
@@ -185,7 +185,7 @@
       feat_2: "🪥 Protein-based boar bristles",
       feat_3: "🚫 No plastic, glue or BPA",
       feat_4: "♻️ Everything is compostable",
-      price_save: "Save 60 kr",
+      price_code: "🏷️ 50 kr off with code SPARA50",
       add_cart: "Add to cart",
       prod_meta: "🔒 Secure payment · 30-day returns · 49 kr shipping",
 

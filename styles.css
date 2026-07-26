@@ -245,10 +245,13 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .product__features li { font-weight: 500; }
 
 .product__buy { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-sm); }
-.price { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.price { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
 .price__now { font-family: var(--font-head); font-size: 2rem; color: var(--green-700); }
-.price__old { color: var(--muted); text-decoration: line-through; }
-.price__save { background: #fde8df; color: #c0492a; font-size: .78rem; font-weight: 700; padding: 4px 10px; border-radius: 100px; }
+.price__code {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #fde8df; color: #c0492a; font-size: .82rem; font-weight: 700;
+  padding: 6px 14px; border-radius: 100px; margin: 0 0 18px; letter-spacing: .02em;
+}
 .qty { display: inline-flex; align-items: center; border: 1.5px solid var(--line); border-radius: 100px; margin-bottom: 16px; overflow: hidden; }
 .qty__btn { width: 42px; height: 42px; border: none; background: var(--white); font-size: 1.3rem; cursor: pointer; color: var(--green-700); transition: background .2s; }
 .qty__btn:hover { background: var(--green-100); }
