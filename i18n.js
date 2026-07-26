@@ -95,7 +95,7 @@
 
       faq_eyebrow: "Vanliga frågor",
       faq_h2: "Allt du undrar",
-      faq_intro: 'Hittar du inte svaret? <a href="mailto:info@bamboobrush.se">Kontakta oss</a> så hjälper vi dig.',
+      faq_intro: 'Hittar du inte svaret? <a href="mailto:info@bamboobrush.se" class="js-copy-email" data-email="info@bamboobrush.se">Kontakta oss</a> så hjälper vi dig.',
       faq_q1: "Är borsten verkligen helt plastfri?",
       faq_a1: "Handtaget är 100% bambu och borsten är gjord av naturligt, proteinbaserat material. Inga plaster, inget lim och inget BPA.",
       faq_q2: "Hur komposterar jag tandborsten?",
@@ -141,6 +141,7 @@
       js_variant: "Naturell bambu",
       js_added: "✓ {qty} × {name} tillagd",
       js_empty_toast: "Din varukorg är tom 🌿",
+      js_email_copied: "📋 {email} – kopierad!",
       js_checkout: "Tack! Demobeställning på {sum} 🌍",
       js_ship_note: "🚚 Frakt 49 kr (DHL) tillkommer i kassan",
     },
@@ -237,7 +238,7 @@
 
       faq_eyebrow: "FAQ",
       faq_h2: "Everything you're wondering",
-      faq_intro: 'Can\'t find the answer? <a href="mailto:info@bamboobrush.se">Contact us</a> and we\'ll help.',
+      faq_intro: 'Can\'t find the answer? <a href="mailto:info@bamboobrush.se" class="js-copy-email" data-email="info@bamboobrush.se">Contact us</a> and we\'ll help.',
       faq_q1: "Is the brush really completely plastic-free?",
       faq_a1: "The handle is 100% bamboo and the bristles are made from natural, protein-based material. No plastics, no glue and no BPA.",
       faq_q2: "How do I compost the toothbrush?",
@@ -283,6 +284,7 @@
       js_variant: "Natural bamboo",
       js_added: "✓ {qty} × {name} added",
       js_empty_toast: "Your cart is empty 🌿",
+      js_email_copied: "📋 {email} – copied!",
       js_checkout: "Thanks! Demo order of {sum} 🌍",
       js_ship_note: "🚚 49 kr shipping (DHL) added at checkout",
     },

@@ -197,6 +197,20 @@
     window.location.href = CHECKOUT_URL + "?qty=" + qty;
   });
 
+  /* ---------- Copy email links (e.g. FAQ "Kontakta oss") ---------- */
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest(".js-copy-email");
+    if (!el) return;
+    e.preventDefault();
+    const email = el.getAttribute("data-email") || "info@bamboobrush.se";
+    const reveal = () => toast(t("js_email_copied", { email }));
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(reveal).catch(() => toast(email));
+    } else {
+      toast(email); // clipboard unavailable — at least reveal the address
+    }
+  });
+
   /* ---------- Re-render dynamic cart text on language change ---------- */
   document.addEventListener("bb:langchange", () => renderCart());
 
