@@ -11,6 +11,7 @@
       ann_compost: "♻️ 100% komposterbar",
       ann_delivery: "🚚 Snabb leverans i hela Sverige",
       ann_micro: "🧬 Fria från mikroplast",
+      ann_code: "🏷️ SPARA50 – 50 kr rabatt vid ordrar över 350 kr",
 
       nav_product: "Produkt",
       nav_why: "Varför bambu",
@@ -41,7 +42,7 @@
       feat_2: "🪥 Proteinbaserat galtborst",
       feat_3: "🚫 Helt utan plast, lim eller BPA",
       feat_4: "♻️ Allt är komposterbart",
-      price_code: "🏷️ 50 kr rabatt med koden SPARA50",
+      price_code: "🏷️ 50 kr rabatt vid ordrar över 350 kr – kod SPARA50",
       add_cart: "Lägg i varukorg",
       prod_meta: "🔒 Säker betalning · 30 dagars öppet köp · Frakt 49 kr",
 
@@ -155,6 +156,7 @@
       ann_compost: "♻️ 100% compostable",
       ann_delivery: "🚚 Fast delivery across Sweden",
       ann_micro: "🧬 Free from microplastics",
+      ann_code: "🏷️ SPARA50 – 50 kr off on orders over 350 kr",
 
       nav_product: "Product",
       nav_why: "Why bamboo",
@@ -185,7 +187,7 @@
       feat_2: "🪥 Protein-based boar bristles",
       feat_3: "🚫 No plastic, glue or BPA",
       feat_4: "♻️ Everything is compostable",
-      price_code: "🏷️ 50 kr off with code SPARA50",
+      price_code: "🏷️ 50 kr off on orders over 350 kr – code SPARA50",
       add_cart: "Add to cart",
       prod_meta: "🔒 Secure payment · 30-day returns · 49 kr shipping",
 
