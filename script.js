@@ -21,18 +21,18 @@
   // The inline <head> script already applied the correct theme (saved choice, else
   // the time-based default) before paint — here we just sync the UI and wire the toggle.
   const root = document.documentElement;
-  const themeToggle = $("#themeToggle");
+  const themeToggles = $$("#themeToggle, #themeToggleMobile");
   function applyTheme(theme, persist) {
     root.setAttribute("data-theme", theme);
     if (persist) { try { localStorage.setItem("bb-theme", theme); } catch (e) {} }
-    themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+    themeToggles.forEach((el) => el.setAttribute("aria-pressed", String(theme === "dark")));
     const meta = $('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", getComputedStyle(root).getPropertyValue("--cream").trim());
   }
   applyTheme(root.getAttribute("data-theme"), false);
-  themeToggle.addEventListener("click", () => {
+  themeToggles.forEach((el) => el.addEventListener("click", () => {
     applyTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark", true);
-  });
+  }));
 
   /* ---------- Header shadow on scroll ---------- */
   const header = $("#header");

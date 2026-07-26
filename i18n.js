@@ -17,6 +17,7 @@
       nav_env: "Miljö",
       nav_faq: "Vanliga frågor",
       nav_blog: "Blogg",
+      theme_label: "Mörkt / ljust läge",
       buy_now: "Köp nu",
 
       hero_h1: 'Plastfri tandborste – ren munvård utan <span class="hl">mikroplaster</span>.',
@@ -160,6 +161,7 @@
       nav_env: "Environment",
       nav_faq: "FAQ",
       nav_blog: "Blog",
+      theme_label: "Dark / light mode",
       buy_now: "Buy now",
 
       hero_h1: 'Plastic-free toothbrush – clean oral care without <span class="hl">microplastics</span>.',
