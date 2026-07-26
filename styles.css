@@ -86,7 +86,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 }
 .announce__track {
   display: flex; gap: 56px; width: max-content; white-space: nowrap;
-  animation: marquee 26s linear infinite;
+  animation: marquee 72s linear infinite;
 }
 .announce__track span { opacity: .9; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
