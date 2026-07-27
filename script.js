@@ -24,7 +24,7 @@
   const themeToggles = $$("#themeToggle, #themeToggleMobile");
   function applyTheme(theme, persist) {
     root.setAttribute("data-theme", theme);
-    if (persist) { try { localStorage.setItem("bb-theme", theme); } catch (e) {} }
+    if (persist) { try { sessionStorage.setItem("bb-theme", theme); } catch (e) {} }
     themeToggles.forEach((el) => el.setAttribute("aria-pressed", String(theme === "dark")));
     const meta = $('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", getComputedStyle(root).getPropertyValue("--cream").trim());

@@ -4,10 +4,10 @@
   var root = document.documentElement;
   function timeTheme() {
     var h = new Date().getHours();
-    return (h >= 20 || h < 6) ? "dark" : "light";
+    return (h >= 19 || h < 6) ? "dark" : "light";
   }
   try {
-    var saved = localStorage.getItem("bb-theme");
+    var saved = sessionStorage.getItem("bb-theme");
     if (saved !== "dark" && saved !== "light") saved = null;
     root.setAttribute("data-theme", saved || timeTheme());
   } catch (e) { root.setAttribute("data-theme", timeTheme()); }
@@ -19,7 +19,7 @@
       t.addEventListener("click", function () {
         var cur = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
         root.setAttribute("data-theme", cur);
-        try { localStorage.setItem("bb-theme", cur); } catch (e) {}
+        try { sessionStorage.setItem("bb-theme", cur); } catch (e) {}
         t.setAttribute("aria-pressed", String(cur === "dark"));
       });
     }

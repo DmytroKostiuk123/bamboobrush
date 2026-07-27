@@ -1,13 +1,14 @@
 /* Theme toggle + footer year for policy pages.
-   Default theme is time-based: dark 20:00–06:00, light otherwise. A saved manual choice always wins. */
+   Default theme is time-based: light 06:00–19:00, dark otherwise. A manual toggle overrides
+   for the current session only (resets next visit so the time-of-day default applies). */
 (function () {
   var root = document.documentElement;
   function timeTheme() {
     var h = new Date().getHours();
-    return (h >= 20 || h < 6) ? "dark" : "light";
+    return (h >= 19 || h < 6) ? "dark" : "light";
   }
   try {
-    var saved = localStorage.getItem("bb-theme");
+    var saved = sessionStorage.getItem("bb-theme");
     if (saved !== "dark" && saved !== "light") saved = null; // allowlist stored value
     root.setAttribute("data-theme", saved || timeTheme());
   } catch (e) { root.setAttribute("data-theme", timeTheme()); }
@@ -19,7 +20,7 @@
       t.addEventListener("click", function () {
         var cur = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
         root.setAttribute("data-theme", cur);
-        try { localStorage.setItem("bb-theme", cur); } catch (e) {}
+        try { sessionStorage.setItem("bb-theme", cur); } catch (e) {}
         t.setAttribute("aria-pressed", String(cur === "dark"));
       });
     }
