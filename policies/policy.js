@@ -1,11 +1,11 @@
 /* Theme toggle + footer year for policy pages.
-   Default theme is time-based: light 06:00–19:00, dark otherwise. A manual toggle overrides
+   Default theme is time-based: light 06:00–20:00, dark otherwise. A manual toggle overrides
    for the current session only (resets next visit so the time-of-day default applies). */
 (function () {
   var root = document.documentElement;
   function timeTheme() {
     var h = new Date().getHours();
-    return (h >= 19 || h < 6) ? "dark" : "light";
+    return (h >= 20 || h < 6) ? "dark" : "light";
   }
   try {
     var saved = sessionStorage.getItem("bb-theme");

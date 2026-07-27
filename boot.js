@@ -1,5 +1,5 @@
 /* Pre-paint boot: apply theme + language before first render (loaded synchronously in <head>).
-   Default theme is time-based (light 06:00–19:00, dark otherwise); a manual toggle overrides
+   Default theme is time-based (light 06:00–20:00, dark otherwise); a manual toggle overrides
    for the current session only (resets next visit so the time-of-day default applies again).
    Stored values are validated against an allowlist before being applied to the DOM. */
 (function () {
@@ -26,7 +26,7 @@
   } catch (e) {}
   if (theme !== "dark" && theme !== "light") {
     var h = new Date().getHours();
-    theme = (h >= 19 || h < 6) ? "dark" : "light";
+    theme = (h >= 20 || h < 6) ? "dark" : "light";
   }
   root.setAttribute("data-theme", theme);
   root.setAttribute("lang", lang === "en" ? "en" : "sv");

@@ -4,7 +4,7 @@
   var root = document.documentElement;
   function timeTheme() {
     var h = new Date().getHours();
-    return (h >= 19 || h < 6) ? "dark" : "light";
+    return (h >= 20 || h < 6) ? "dark" : "light";
   }
   try {
     var saved = sessionStorage.getItem("bb-theme");
