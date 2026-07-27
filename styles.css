@@ -189,7 +189,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 
 .hero__visual { position: relative; display: grid; place-items: center; min-height: 440px; }
 .hero__blob {
-  position: absolute; width: 420px; height: 420px; border-radius: 46% 54% 60% 40% / 50% 45% 55% 50%;
+  position: absolute; width: 420px; height: 420px; max-width: 85vw; max-height: 85vw; border-radius: 46% 54% 60% 40% / 50% 45% 55% 50%;
   background: radial-gradient(circle at 35% 30%, var(--blob), var(--green-100));
   animation: morph 12s ease-in-out infinite; filter: blur(2px);
 }
