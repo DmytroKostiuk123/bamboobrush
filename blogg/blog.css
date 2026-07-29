@@ -78,3 +78,9 @@
 .related__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
 .related a { display: block; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; color: var(--ink); font-weight: 600; line-height: 1.35; transition: border-color .2s, transform .2s; }
 .related a:hover { border-color: var(--green-700); transform: translateY(-2px); }
+
+/* Inline illustration / figure */
+.article__figure { margin: 26px 0; max-width: 720px; }
+.article__figure svg { width: 100%; height: auto; max-width: 660px; display: block; color: var(--ink); }
+.article__figure figcaption { font-size: .8rem; color: var(--muted); margin-top: 8px; }
+.table-note { font-size: .85rem; color: var(--muted); margin-top: -6px; }
