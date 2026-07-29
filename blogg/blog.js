@@ -25,5 +25,38 @@
     }
     var y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
+
+    var body = document.querySelector(".article__body");
+
+    // Auto reading time (~200 words/min)
+    var rt = document.querySelector("[data-reading-time]");
+    if (rt && body) {
+      var words = (body.innerText || "").trim().split(/\s+/).filter(Boolean).length;
+      rt.textContent = Math.max(1, Math.round(words / 200)) + " min läsning";
+    }
+
+    // Auto table of contents built from the article's H2 headings
+    var toc = document.querySelector("[data-toc]");
+    if (toc && body) {
+      var hs = body.querySelectorAll("h2");
+      if (hs.length >= 3) {
+        var ul = document.createElement("ul");
+        Array.prototype.forEach.call(hs, function (h, i) {
+          if (!h.id) {
+            h.id = "sec-" + (i + 1) + "-" + (h.textContent || "").toLowerCase()
+              .replace(/[^a-z0-9åäö]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40);
+          }
+          var li = document.createElement("li");
+          var a = document.createElement("a");
+          a.href = "#" + h.id;
+          a.textContent = h.textContent;
+          li.appendChild(a);
+          ul.appendChild(li);
+        });
+        toc.appendChild(ul);
+      } else {
+        toc.hidden = true;
+      }
+    }
   });
 })();

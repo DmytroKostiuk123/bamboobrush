@@ -11,6 +11,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bamboobrush.se/blogg/bambutandborste-vs-plasttandborste.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bamboobrush.se/blogg/galtborst-vs-nylonborst.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bamboobrush.se/blogg/hur-ofta-byta-tandborste.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
