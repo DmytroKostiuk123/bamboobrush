@@ -45,6 +45,14 @@
 }
 .article__cta p { color: var(--ink); font-weight: 600; margin: 0; }
 
+/* FAQ (article) – note: markup is <details class="accordion">, so target details.accordion */
+.article__faq { max-width: 720px; margin: 48px 0 0; }
+.article__faq h2 { font-size: 1.3rem; margin: 0 0 18px; }
+.article__faq details.accordion { background: var(--faq-card); border: 1px solid var(--line); border-radius: var(--radius-sm); margin-bottom: 12px; overflow: hidden; }
+.article__faq details.accordion[open] { border-color: var(--green-700); }
+.article__faq details.accordion[open] summary::after { transform: rotate(45deg); }
+.article__faq details.accordion p { padding: 0 22px 20px; margin: 0; color: var(--muted); line-height: 1.7; }
+
 .blog__note { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); margin-top: 44px; padding-top: 18px; }
 
 /* Byline (author · reading time · updated) */
