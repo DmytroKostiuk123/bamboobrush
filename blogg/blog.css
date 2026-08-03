@@ -36,6 +36,7 @@
 .article__box { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 26px; margin: 26px 0; }
 .article__box p { margin-bottom: 6px; }
 .article__box p:last-child { margin-bottom: 0; }
+.article__signoff { font-style: italic; color: var(--muted); margin-top: 24px; }
 
 /* CTA back to product */
 .article__cta {

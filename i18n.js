@@ -18,6 +18,7 @@
       nav_env: "Miljö",
       nav_faq: "Vanliga frågor",
       nav_blog: "Blogg",
+      nav_about: "Om oss",
       theme_label: "Mörkt / ljust läge",
       buy_now: "Köp nu",
 
@@ -127,6 +128,7 @@
       foot_why: "Varför BambooBrush",
       foot_faq: "Vanliga frågor",
       foot_contact: "Kontakta oss",
+      foot_about: "Om oss",
       foot_shipping: "Frakt & leverans",
       foot_privacy: "Integritetspolicy",
       foot_refund: "Returpolicy",
@@ -163,6 +165,7 @@
       nav_env: "Environment",
       nav_faq: "FAQ",
       nav_blog: "Blog",
+      nav_about: "About",
       theme_label: "Dark / light mode",
       buy_now: "Buy now",
 
@@ -272,6 +275,7 @@
       foot_why: "Why BambooBrush",
       foot_faq: "FAQ",
       foot_contact: "Contact us",
+      foot_about: "About",
       foot_shipping: "Shipping & delivery",
       foot_privacy: "Privacy policy",
       foot_refund: "Return policy",

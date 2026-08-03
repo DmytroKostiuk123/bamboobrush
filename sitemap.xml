@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bamboobrush.se/om-oss.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://bamboobrush.se/blogg/bambutandborste-vs-plasttandborste.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
