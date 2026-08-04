@@ -31,6 +31,7 @@
     "name": "Tandborste 6-pack – bambu med naturborst",
     "image": "https://bamboobrush.se/assets/product-1.jpg",
     "description": "Sex tandborstar i naturlig bambu med galtborst (keratin). Plastfria, komposterbara och fria från mikroplast. Levereras i komposterbar förpackning.",
+    "sku": "BB-TB-6PACK",
     "brand": { "@type": "Brand", "name": "BambooBrush" },
     "offers": {
       "@type": "Offer",
@@ -94,7 +95,11 @@
 
   <main>
     <div class="container">
-      <a href="../index.html" class="blog__back">← Till startsidan</a>
+      <nav class="breadcrumb" aria-label="Brödsmulor">
+        <a href="../index.html">Startsidan</a><span class="sep">›</span>
+        <a href="../index.html#product">Produkter</a><span class="sep">›</span>
+        <span>Tandborste 6-pack</span>
+      </nav>
     </div>
 
     <!-- Product -->
@@ -113,12 +118,9 @@
         </div>
 
         <div class="product__info">
+          <span class="pdp__brand">BambooBrush</span>
           <h1 data-i18n="prod_title">Tandborste 6-pack</h1>
-          <p class="product__desc" data-i18n="prod_desc">
-            Sex tandborstar i naturlig bambu med mjuka, BPA-fria borst.
-            Ett års förbrukning för en person – eller perfekt att dela med familjen.
-            Levereras i komposterbar förpackning.
-          </p>
+          <p class="pdp__sku">Artikelnr: BB-TB-6PACK</p>
 
           <ul class="product__features">
             <li data-i18n="feat_1">🌿 Handtag i naturlig bambu</li>
@@ -131,6 +133,7 @@
             <div class="price">
               <span class="price__now">230 kr</span>
             </div>
+            <p class="pdp__stock">✓ <span>Finns i lager</span></p>
             <p class="price__code" data-i18n="price_code">🏷️ 50 kr rabatt vid ordrar över 350 kr – kod SPARA50</p>
             <div class="qty" aria-label="Antal">
               <button class="qty__btn" id="qtyMinus" aria-label="Minska">−</button>
@@ -138,99 +141,50 @@
               <button class="qty__btn" id="qtyPlus" aria-label="Öka">+</button>
             </div>
             <button class="btn btn--primary btn--lg product__add" data-add data-from-qty data-i18n="add_cart">Lägg i varukorg</button>
-            <p class="product__meta" data-i18n="prod_meta">🔒 Säker betalning · 30 dagars öppet köp · Frakt 49 kr</p>
+            <p class="pdp__delivery">🔒 Säker betalning · 30 dagars öppet köp<br>🚚 Frakt 49 kr (DHL) · skickas inom 24 h · leverans 2–4 arbetsdagar</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Value strip -->
-    <section class="strip">
-      <div class="container strip__inner">
-        <div class="strip__item"><strong>0%</strong><span data-i18n="strip_plastic_l">Plast</span></div>
-        <div class="strip__item"><strong>100%</strong><span data-i18n="strip_compost_l">Komposterbar</span></div>
-        <div class="strip__item"><strong data-i18n="strip_fast_v">Snabb</strong><span data-i18n="strip_fast_l">Leverans</span></div>
-        <div class="strip__item"><strong data-i18n="strip_swe_v">Svensk</strong><span data-i18n="strip_swe_l">Frakt</span></div>
-      </div>
-    </section>
-
-    <!-- Why bamboo -->
-    <section class="why">
+    <!-- Product details -->
+    <section class="pdp-section">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow" data-i18n="why_eyebrow">Varför BambooBrush?</span>
-          <h2 data-i18n-html="why_h2">Litet byte. <span class="hl">Stor</span> skillnad.</h2>
-          <p data-i18n="why_p">En vanlig plasttandborste tar över 400 år att brytas ner. Vår löses upp i komposten på några månader.</p>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <div class="card__icon">🌱</div>
-            <h3 data-i18n="card1_h">Snabbast växande växt</h3>
-            <p data-i18n="card1_p">Bambu växer upp till 90 cm per dygn och behöver varken bekämpningsmedel eller konstbevattning.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">💧</div>
-            <h3 data-i18n="card2_h">Inga mikroplaster</h3>
-            <p data-i18n="card2_p">Våra borst är gjorda av proteinet keratin som kommer från vildsvinshår.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">♻️</div>
-            <h3 data-i18n="card3_h">Helt komposterbar</h3>
-            <p data-i18n="card3_p">Hela tandborsten kan komposteras – både bambuhandtaget och de naturliga borsten blir till jord igen.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🦷</div>
-            <h3 data-i18n="card4_h">Skonsam mot emaljen</h3>
-            <p data-i18n="card4_p">Torrt är galtborst styvt (3–6 GPa), men när man blöter ner den mjuknar den till ≤1 GPa – mjukare än nylon, som ligger kvar på 2–3 GPa även blött.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="steps">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow" data-i18n="steps_eyebrow">Så enkelt är det</span>
-          <h2 data-i18n="steps_h2">Från beställning till kompost</h2>
-        </div>
-        <div class="steps__grid">
-          <div class="step"><span class="step__n">1</span><h3 data-i18n="step1_h">Beställ</h3><p data-i18n="step1_p">Välj ditt 6-pack och slutför i kassan på under en minut.</p></div>
-          <div class="step"><span class="step__n">2</span><h3 data-i18n="step2_h">Borsta</h3><p data-i18n="step2_p">Byt borste varannan månad – ett pack räcker länge.</p></div>
-          <div class="step"><span class="step__n">3</span><h3 data-i18n="step3_h">Gräv ner den</h3><p data-i18n="step3_p">Gräv ner hela tandborsten i jorden eller lägg den i komposten – naturen tar hand om resten.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-      <div class="container faq__inner">
-        <div class="section-head section-head--left">
-          <span class="eyebrow" data-i18n="faq_eyebrow">Vanliga frågor</span>
-          <h2 data-i18n="faq_h2">Allt du undrar</h2>
-          <p data-i18n-html="faq_intro">Hittar du inte svaret? <a href="mailto:info@bamboobrush.se">Kontakta oss</a> så hjälper vi dig.</p>
-        </div>
         <div class="accordion">
           <details open>
-            <summary data-i18n="faq_q1">Är borsten verkligen helt plastfri?</summary>
-            <p data-i18n="faq_a1">Handtaget är 100% bambu och borsten är gjord av naturligt, proteinbaserat material. Inga plaster, inget lim och inget BPA.</p>
+            <summary>Beskrivning</summary>
+            <p>BambooBrush 6-pack är sex tandborstar tillverkade helt av naturmaterial – för dig som vill borsta tänderna utan plast i munnen.</p>
+            <p>Handtaget är av naturlig bambu, ett snabbväxande gräs som är komposterbart. Borsten är naturborst (galtborst av keratin) med medium hårdhet – samma protein som finns i hår och naglar, helt fritt från nylon och mikroplast. Borsten fästs i handtaget med en liten metallklammer, som du enkelt plockar bort innan du komposterar handtaget.</p>
+            <p>Helt utan plast, lim och BPA. Levereras i en komposterbar pappersförpackning.</p>
           </details>
           <details>
-            <summary data-i18n="faq_q2">Hur komposterar jag tandborsten?</summary>
-            <p data-i18n="faq_a2">Gräv ner hela tandborsten i jorden eller lägg den i komposten. Både bambuhandtaget och galtborsten bryts ner naturligt.</p>
+            <summary>Skötselråd</summary>
+            <p>Skölj tandborsten efter användning och låt den torka ordentligt mellan gångerna – naturborst suger mer vatten än nylon, så lufttorkning håller den fräsch. Byt borste ungefär varannan månad för bästa munhygien, eller tidigare om stråna börjar spreta.</p>
           </details>
           <details>
-            <summary data-i18n="faq_q3">Hur länge håller ett 6-pack?</summary>
-            <p data-i18n="faq_a3">Tandläkare rekommenderar byte varannan månad. Ett 6-pack räcker alltså i cirka 1 år för en person.</p>
+            <summary>Innehåll &amp; specifikation</summary>
+            <ul>
+              <li><strong>Antal:</strong> 6 tandborstar</li>
+              <li><strong>Handtag:</strong> naturlig bambu</li>
+              <li><strong>Borst:</strong> naturborst (galtborst av keratin), medium hårdhet</li>
+              <li><strong>Förpackning:</strong> komposterbar papp</li>
+            </ul>
           </details>
           <details>
-            <summary data-i18n="faq_q4">Vad kostar frakten?</summary>
-            <p data-i18n="faq_a4">Frakten är 49 kr per order och skickas med DHL. Vi skickar inom 24 timmar och leverans sker normalt inom 2–4 arbetsdagar.</p>
+            <summary>Kompostering &amp; återvinning</summary>
+            <p>När borsten är utsliten: dra eller klipp bort borsttofsarna och metallklammern (metallen återvinns) och kompostera bambuhandtaget – det blir till jord på ungefär sex månader. Läs mer i vår guide <a href="../blogg/kompostera-tandborsten.html">Så komposterar du din bambutandborste</a>.</p>
           </details>
-          <details>
-            <summary data-i18n="faq_q5">Kan jag returnera om jag ändrar mig?</summary>
-            <p data-i18n="faq_a5">Självklart. Du har 30 dagars öppet köp på oöppnade förpackningar. Kontakta oss så ordnar vi returen.</p>
-          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="pdp-section">
+      <div class="container">
+        <h2>Recensioner</h2>
+        <div class="pdp-reviews__empty">
+          <p><strong>Inga recensioner än.</strong></p>
+          <p>Har du köpt och provat vår tandborste? Din åsikt hjälper andra att välja rätt.</p>
         </div>
       </div>
     </section>
