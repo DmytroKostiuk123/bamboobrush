@@ -3,7 +3,7 @@
   "use strict";
 
   // Display name/variant come from the i18n dictionary (prod_title / js_variant), not from here.
-  const PRODUCT = { id: "tb6", price: 230, img: "assets/product-1.jpg" };
+  const PRODUCT = { id: "tb6", price: 230, img: "/assets/product-1.jpg" };
   const MIN_QTY = 1;
   const MAX_QTY = 20;
   const CHECKOUT_URL = "https://bamboobrush-checkout.dmytro-kostiuk123.workers.dev/";
@@ -56,24 +56,30 @@
 
   /* ---------- Product gallery thumbnails ---------- */
   const galleryImg = $("#galleryImg");
-  $$(".thumb").forEach((t) =>
-    t.addEventListener("click", () => {
-      $$(".thumb").forEach((x) => x.classList.remove("is-active"));
-      t.classList.add("is-active");
-      galleryImg.src = t.dataset.img;
-    })
-  );
+  if (galleryImg) {
+    $$(".thumb").forEach((t) =>
+      t.addEventListener("click", () => {
+        $$(".thumb").forEach((x) => x.classList.remove("is-active"));
+        t.classList.add("is-active");
+        galleryImg.src = t.dataset.img;
+      })
+    );
+  }
 
   /* ---------- PDP quantity ---------- */
   const qtyVal = $("#qtyVal");
-  $("#qtyMinus").addEventListener("click", () => {
-    pdpQty = Math.max(MIN_QTY, pdpQty - 1);
-    qtyVal.textContent = pdpQty;
-  });
-  $("#qtyPlus").addEventListener("click", () => {
-    pdpQty = Math.min(MAX_QTY, pdpQty + 1);
-    qtyVal.textContent = pdpQty;
-  });
+  const qtyMinus = $("#qtyMinus");
+  const qtyPlus = $("#qtyPlus");
+  if (qtyVal && qtyMinus && qtyPlus) {
+    qtyMinus.addEventListener("click", () => {
+      pdpQty = Math.max(MIN_QTY, pdpQty - 1);
+      qtyVal.textContent = pdpQty;
+    });
+    qtyPlus.addEventListener("click", () => {
+      pdpQty = Math.min(MAX_QTY, pdpQty + 1);
+      qtyVal.textContent = pdpQty;
+    });
+  }
 
   /* ---------- Cart logic ---------- */
   function addToCart(qty = 1) {

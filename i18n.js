@@ -19,6 +19,7 @@
       nav_faq: "Vanliga frågor",
       nav_blog: "Blogg",
       nav_about: "Om oss",
+      see_product: "Se produkten →",
       theme_label: "Mörkt / ljust läge",
       buy_now: "Köp nu",
 
@@ -166,6 +167,7 @@
       nav_faq: "FAQ",
       nav_blog: "Blog",
       nav_about: "About",
+      see_product: "See the product →",
       theme_label: "Dark / light mode",
       buy_now: "Buy now",
 
