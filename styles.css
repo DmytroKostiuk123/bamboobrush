@@ -291,7 +291,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .thumb:hover { transform: translateY(-3px); }
 .thumb.is-active { border-color: var(--green-700); }
 
-.product__info h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 14px; }
+.product__info h1, .product__info h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 14px; line-height: 1.1; }
 .product__desc { color: var(--muted); margin-bottom: 22px; max-width: 480px; }
 .product__features { list-style: none; display: grid; gap: 10px; margin-bottom: 28px; }
 .product__features li { font-weight: 500; }
