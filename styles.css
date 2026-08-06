@@ -458,6 +458,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .review-form__msg { margin: 12px 0 0; font-size: .9rem; color: var(--green-700); font-weight: 600; }
 .review-form__msg.is-error { color: #c0492a; }
 .review-form__disclaimer { margin: 10px 0 0; font-size: .78rem; color: var(--muted); }
+/* Honeypot (anti-spam) – dolt för människor, bara bottar fyller i det */
+.hp-field { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
 
 /* ===== Trust bar ===== */
 .trust { padding: 64px 0; }

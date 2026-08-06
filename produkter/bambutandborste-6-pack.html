@@ -214,6 +214,10 @@
               <label for="rvText">Din recension</label>
               <textarea id="rvText" name="text" rows="4" maxlength="600" required></textarea>
             </div>
+            <div class="hp-field" aria-hidden="true">
+              <label for="rvWebsite">Lämna detta fält tomt</label>
+              <input type="text" id="rvWebsite" name="website" tabindex="-1" autocomplete="off" />
+            </div>
             <button type="submit" class="btn btn--primary btn--lg" id="rvSubmit">Skicka recension</button>
             <p class="review-form__msg" id="rvMsg" role="status" aria-live="polite"></p>
             <p class="review-form__disclaimer">Din recension granskas innan den publiceras. Publicera inga kontaktuppgifter.</p>

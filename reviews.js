@@ -70,6 +70,7 @@
       e.preventDefault();
       const name = ($("#rvName").value || "").trim();
       const text = ($("#rvText").value || "").trim();
+      const website = (($("#rvWebsite") || {}).value || "").trim(); // honeypot – ska vara tom
       if (!name || !text || !rating) { show("Fyll i namn, betyg och recension.", true); return; }
 
       const btn = $("#rvSubmit");
@@ -79,7 +80,7 @@
         const res = await fetch(API + "/reviews", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ product: PRODUCT, name, rating, text }),
+          body: JSON.stringify({ product: PRODUCT, name, rating, text, website }),
         });
         if (!res.ok) throw new Error("bad");
         form.reset();
