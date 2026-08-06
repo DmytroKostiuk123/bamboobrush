@@ -1,4 +1,4 @@
-/* ===== BambooBrush – produktrecensioner =====
+/* v1 ===== BambooBrush – produktrecensioner =====
    Skickar recensioner till Cloudflare Worker för Telegram-moderering,
    och visar godkända recensioner. Degradar tyst om Workern inte är uppe. */
 (() => {
