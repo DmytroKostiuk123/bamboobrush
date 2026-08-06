@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Bambutandborste 6-pack med naturborst (galtborst) – helt plastfritt och komposterbart, utan mikroplast. 230 kr, skickas från Sverige. 30 dagars öppet köp." />
   <meta name="theme-color" content="#0f140d" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://www.google.com https://www.google.se https://googleads.g.doubleclick.net; connect-src 'self' https://www.googletagmanager.com https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com; frame-src https://td.doubleclick.net https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://www.google.com https://www.google.se https://googleads.g.doubleclick.net; connect-src 'self' https://www.googletagmanager.com https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://bamboobrush-reviews.dmytro-kostiuk123.workers.dev; frame-src https://td.doubleclick.net https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <script src="../boot.js"></script>
   <!-- Google tag (gtag.js) – Google Ads -->
@@ -183,9 +183,41 @@
     <section class="pdp-section">
       <div class="container">
         <h2>Recensioner</h2>
-        <div class="pdp-reviews__empty">
-          <p><strong>Inga recensioner än.</strong></p>
-          <p>Har du köpt och provat vår tandborste? Din åsikt hjälper andra att välja rätt.</p>
+
+        <div id="reviewsList" class="reviews-list">
+          <div class="pdp-reviews__empty" id="reviewsEmpty">
+            <p><strong>Inga recensioner än.</strong></p>
+            <p>Har du köpt och provat vår tandborste? Bli den första att recensera.</p>
+          </div>
+          <!-- Godkända recensioner injiceras här av reviews.js -->
+        </div>
+
+        <div class="review-form-wrap">
+          <h3>Lämna en recension</h3>
+          <form id="reviewForm" class="review-form" novalidate>
+            <div class="review-form__row">
+              <label for="rvName">Namn</label>
+              <input type="text" id="rvName" name="name" maxlength="40" autocomplete="name" required />
+            </div>
+            <div class="review-form__row">
+              <span class="review-form__label">Betyg</span>
+              <div class="star-input" id="starInput" role="group" aria-label="Välj betyg 1–5">
+                <button type="button" class="star" data-v="1" aria-label="1 stjärna">★</button>
+                <button type="button" class="star" data-v="2" aria-label="2 stjärnor">★</button>
+                <button type="button" class="star" data-v="3" aria-label="3 stjärnor">★</button>
+                <button type="button" class="star" data-v="4" aria-label="4 stjärnor">★</button>
+                <button type="button" class="star" data-v="5" aria-label="5 stjärnor">★</button>
+              </div>
+              <input type="hidden" id="rvRating" name="rating" value="0" />
+            </div>
+            <div class="review-form__row">
+              <label for="rvText">Din recension</label>
+              <textarea id="rvText" name="text" rows="4" maxlength="600" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg" id="rvSubmit">Skicka recension</button>
+            <p class="review-form__msg" id="rvMsg" role="status" aria-live="polite"></p>
+            <p class="review-form__disclaimer">Din recension granskas innan den publiceras. Publicera inga kontaktuppgifter.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -253,5 +285,6 @@
 
   <script src="../i18n.js"></script>
   <script src="../script.js"></script>
+  <script src="../reviews.js"></script>
 </body>
 </html>
