@@ -548,7 +548,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 
 /* ===== Toast ===== */
 .toast {
-  position: fixed; bottom: 24px; left: 50%; transform: translate(-50%, 120%); z-index: 200;
+  position: fixed; bottom: 24px; left: 50%; transform: translate(-50%, calc(100% + 40px)); z-index: 200;
   background: var(--green-900); color: #fff; padding: 14px 24px; border-radius: 100px;
   font-weight: 500; box-shadow: var(--shadow); transition: transform .35s cubic-bezier(.2,.8,.2,1); font-size: .92rem;
 }
