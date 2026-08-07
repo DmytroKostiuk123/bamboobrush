@@ -252,7 +252,7 @@
   }
 
   /* ---------- Scroll reveal ---------- */
-  const els = $$(".section-head, .card, .step, .ngo-card, .product__gallery, .product__info, .impact__copy, .impact__visual, .strip__item");
+  const els = $$(".section-head, .card, .step, .ngo-card, .product__gallery, .product__info, .impact__copy, .impact__visual, .strip__item, .greenwash__head, .gwcard");
   els.forEach((el, i) => {
     el.setAttribute("data-reveal", "");
     el.style.transitionDelay = `${(i % 4) * 60}ms`;
