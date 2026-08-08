@@ -264,4 +264,29 @@
   els.forEach((el) => io.observe(el));
 
   renderCart();
+
+  /* ---------- Speculatively warm the product page ----------
+     Once the homepage has fully loaded and the browser is idle, prefetch the
+     product page (low priority) so clicking "Se produkten" feels instant.
+     Only runs on the homepage; skips if the visitor asked to save data. */
+  (function warmProductPage() {
+    const onHome = location.pathname === "/" || location.pathname.endsWith("/index.html");
+    if (!onHome) return;
+    if (navigator.connection && navigator.connection.saveData) return;
+
+    const prefetch = () => {
+      ["produkter/bambutandborste-6-pack.html"].forEach((href) => {
+        if (document.querySelector('link[rel="prefetch"][href="' + href + '"]')) return;
+        const l = document.createElement("link");
+        l.rel = "prefetch";
+        l.href = href;
+        document.head.appendChild(l);
+      });
+    };
+    const schedule = () =>
+      window.requestIdleCallback ? requestIdleCallback(prefetch, { timeout: 3000 }) : setTimeout(prefetch, 1500);
+
+    if (document.readyState === "complete") schedule();
+    else window.addEventListener("load", schedule, { once: true });
+  })();
 })();
