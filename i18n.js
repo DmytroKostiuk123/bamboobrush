@@ -354,11 +354,32 @@
     }
   }
 
+  // Capture each page's optimized static <title>/<meta description> once, before
+  // any language swap, so the default-language (sv) SEO tags are never clobbered.
+  var _titleEl = null, _descEl = null, _svTitle = "", _svDesc = "", _captured = false;
+  function captureStatic() {
+    if (_captured) return;
+    _titleEl = document.querySelector("title");
+    _descEl = document.querySelector('meta[name="description"]');
+    _svTitle = _titleEl ? _titleEl.textContent : "";
+    _svDesc = _descEl ? (_descEl.getAttribute("content") || "") : "";
+    _captured = true;
+  }
+
   function applyDom() {
+    captureStatic();
     document.documentElement.setAttribute("lang", lang);
-    document.title = t("page_title");
-    var meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", t("page_desc"));
+
+    // Keep the page's unique static SV title/description for the default language
+    // (that is what Google indexes). Only swap to English when the visitor picks EN,
+    // preferring a per-page data-en value over the generic fallback key.
+    if (lang === "sv") {
+      document.title = _svTitle;
+      if (_descEl) _descEl.setAttribute("content", _svDesc);
+    } else {
+      document.title = (_titleEl && _titleEl.dataset.en) || t("page_title");
+      if (_descEl) _descEl.setAttribute("content", _descEl.dataset.en || t("page_desc"));
+    }
 
     apply("data-i18n", "textContent");
     apply("data-i18n-html", "innerHTML");
