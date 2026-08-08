@@ -627,6 +627,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 [data-theme="dark"] .nav-dd__badge--soon { color: var(--sand); }
 
 /* ===== Coming-soon product state ===== */
+.product__gallery--portrait .product__main { aspect-ratio: 3 / 4; }
 .product__sticker--soon { background: #a97b18; }
 [data-theme="dark"] .product__sticker--soon { background: var(--sand); color: var(--green-900); }
 .pdp__stock--soon { color: #a97b18; }
