@@ -657,7 +657,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 /* ===== Responsive ===== */
 /* Header: switch to the hamburger menu a bit earlier so the nav never
    crowds/wraps in the ~901–1000px in-between zone. Layout rules stay at 900px. */
-@media (max-width: 1000px) {
+@media (max-width: 760px) {
   .nav { display: none; }
   .hamburger { display: flex; }
   .mobile-nav { display: flex; }
