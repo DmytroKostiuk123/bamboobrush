@@ -14,6 +14,8 @@
       ann_code: "🏷️ SPARA50 – 50 kr rabatt vid ordrar över 350 kr",
 
       nav_product: "Produkt",
+      dd_instock: "✓ Finns i lager",
+      dd_soon: "🔔 Kommer snart",
       nav_why: "Varför bambu",
       nav_env: "Miljö",
       nav_faq: "Vanliga frågor",
@@ -178,6 +180,8 @@
       ann_code: "🏷️ SPARA50 – 50 kr off on orders over 350 kr",
 
       nav_product: "Product",
+      dd_instock: "✓ In stock",
+      dd_soon: "🔔 Coming soon",
       nav_why: "Why bamboo",
       nav_env: "Environment",
       nav_faq: "FAQ",
