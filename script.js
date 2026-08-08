@@ -56,11 +56,14 @@
 
   /* ---------- Product gallery thumbnails ---------- */
   const galleryImg = $("#galleryImg");
+  const galleryWebp = $("#galleryWebp");
   if (galleryImg) {
     $$(".thumb").forEach((t) =>
       t.addEventListener("click", () => {
         $$(".thumb").forEach((x) => x.classList.remove("is-active"));
         t.classList.add("is-active");
+        // keep the WebP <source> and the JPG fallback <img> in sync
+        if (galleryWebp && t.dataset.webp) galleryWebp.srcset = t.dataset.webp;
         galleryImg.src = t.dataset.img;
       })
     );

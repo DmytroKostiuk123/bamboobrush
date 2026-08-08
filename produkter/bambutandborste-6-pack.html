@@ -108,12 +108,15 @@
         <div class="product__gallery">
           <div class="product__main">
             <div class="product__sticker" data-i18n="prod_sticker">Bästsäljare</div>
-            <img id="galleryImg" src="../assets/product-1.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Bambutandborste 6-pack i förpackning" />
+            <picture>
+              <source id="galleryWebp" srcset="../assets/product-1.webp" type="image/webp" />
+              <img id="galleryImg" src="../assets/product-1.jpg" width="825" height="1100" loading="lazy" decoding="async" alt="Bambutandborste 6-pack i förpackning" />
+            </picture>
           </div>
           <div class="product__thumbs" aria-label="Produktbilder">
-            <button class="thumb is-active" data-img="../assets/product-1.jpg" aria-label="Bild 1"><img src="../assets/product-1.jpg" alt="" loading="lazy" decoding="async" /></button>
-            <button class="thumb" data-img="../assets/product-3.jpg" aria-label="Bild 2"><img src="../assets/product-3.jpg" alt="" loading="lazy" decoding="async" /></button>
-            <button class="thumb" data-img="../assets/product-4.jpg" aria-label="Bild 3"><img src="../assets/product-4.jpg" alt="" loading="lazy" decoding="async" /></button>
+            <button class="thumb is-active" data-img="../assets/product-1.jpg" data-webp="../assets/product-1.webp" aria-label="Bild 1"><picture><source srcset="../assets/product-1.webp" type="image/webp" /><img src="../assets/product-1.jpg" alt="" loading="lazy" decoding="async" /></picture></button>
+            <button class="thumb" data-img="../assets/product-3.jpg" data-webp="../assets/product-3.webp" aria-label="Bild 2"><picture><source srcset="../assets/product-3.webp" type="image/webp" /><img src="../assets/product-3.jpg" alt="" loading="lazy" decoding="async" /></picture></button>
+            <button class="thumb" data-img="../assets/product-4.jpg" data-webp="../assets/product-4.webp" aria-label="Bild 3"><picture><source srcset="../assets/product-4.webp" type="image/webp" /><img src="../assets/product-4.jpg" alt="" loading="lazy" decoding="async" /></picture></button>
           </div>
         </div>
 
