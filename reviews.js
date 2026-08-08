@@ -9,6 +9,7 @@
   const PRODUCT = "tb6";
 
   const $ = (s, r = document) => r.querySelector(s);
+  const t = (k) => (window.I18N && window.I18N.t ? window.I18N.t(k) : k);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   // 5 tecken: n fyllda ★ följt av tomma ☆
@@ -34,7 +35,7 @@
         el.className = "review-card";
         el.innerHTML =
           '<div class="review-card__head">' +
-            '<span class="review-card__name">' + esc(r.name || "Anonym") + "</span>" +
+            '<span class="review-card__name">' + esc(r.name || t("rev_js_anon")) + "</span>" +
             '<span class="review-card__stars" aria-label="' + rating + ' av 5">' + stars(rating) + "</span>" +
           "</div>" +
           '<p class="review-card__text">' + esc(r.text || "") + "</p>" +
@@ -71,11 +72,11 @@
       const name = ($("#rvName").value || "").trim();
       const text = ($("#rvText").value || "").trim();
       const website = (($("#rvWebsite") || {}).value || "").trim(); // honeypot – ska vara tom
-      if (!name || !text || !rating) { show("Fyll i namn, betyg och recension.", true); return; }
+      if (!name || !text || !rating) { show(t("rev_js_fill"), true); return; }
 
       const btn = $("#rvSubmit");
       btn.disabled = true;
-      show("Skickar…", false);
+      show(t("rev_js_sending"), false);
       try {
         const res = await fetch(API + "/reviews", {
           method: "POST",
@@ -86,9 +87,9 @@
         form.reset();
         rating = 0; ratingField.value = 0;
         if (starInput) starInput.querySelectorAll(".star").forEach((s) => s.classList.remove("is-on"));
-        show("Tack! Din recension har skickats för granskning och publiceras när den godkänts. 🌿", false);
+        show(t("rev_js_thanks"), false);
       } catch (err) {
-        show("Kunde inte skicka just nu. Försök igen om en stund.", true);
+        show(t("rev_js_error"), true);
       } finally {
         btn.disabled = false;
       }
