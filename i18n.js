@@ -98,6 +98,8 @@
       rev_js_thanks: "Tack! Din recension har skickats för granskning och publiceras när den godkänts. 🌿",
       rev_js_error: "Kunde inte skicka just nu. Försök igen om en stund.",
       rev_js_anon: "Anonym",
+      ship_meter_left: "🚚 {amount} kr kvar till fri frakt",
+      ship_meter_done: "🎉 Du har fri frakt!",
       prod_meta: "🔒 Säker betalning · 30 dagars öppet köp · Frakt 49 kr",
 
       why_eyebrow: "Varför BambooBrush?",
@@ -298,6 +300,8 @@
       rev_js_thanks: "Thank you! Your review has been submitted for moderation and will be published once approved. 🌿",
       rev_js_error: "Couldn't send right now. Please try again in a moment.",
       rev_js_anon: "Anonymous",
+      ship_meter_left: "🚚 {amount} kr to go for free shipping",
+      ship_meter_done: "🎉 You've unlocked free shipping!",
       prod_meta: "🔒 Secure payment · 30-day returns · 49 kr shipping",
 
       why_eyebrow: "Why BambooBrush?",

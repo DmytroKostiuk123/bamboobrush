@@ -649,6 +649,14 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .pdp__delivery--soon { color: var(--muted); font-size: .86rem; margin-top: 16px; }
 .pdp__note { color: var(--muted); font-size: .84rem; font-style: italic; margin-top: 10px; }
 
+/* ===== Free-shipping meter ===== */
+.ship-meter { margin: 2px 0 18px; }
+.ship-meter__label { margin: 0 0 8px; font-size: .9rem; color: var(--muted); transition: color .3s; }
+.ship-meter__track { height: 9px; border-radius: 100px; background: var(--green-100); overflow: hidden; }
+.ship-meter__fill { height: 100%; width: 0; border-radius: 100px; background: linear-gradient(90deg, var(--green-500), var(--green-700)); transition: width .45s cubic-bezier(.2,.8,.2,1); }
+.ship-meter.is-unlocked .ship-meter__label { color: var(--green-700); font-weight: 700; }
+.ship-meter.is-unlocked .ship-meter__fill { background: var(--green-500); }
+
 /* ===== Mobile nav product sub-list ===== */
 .mobile-nav__sub { display: flex; align-items: center; gap: 8px; padding-left: 40px !important; font-size: .9rem; color: var(--muted) !important; }
 .mnav-badge { font-size: .66rem; font-weight: 700; padding: 2px 7px; border-radius: 100px; background: var(--green-100); color: var(--green-700); }

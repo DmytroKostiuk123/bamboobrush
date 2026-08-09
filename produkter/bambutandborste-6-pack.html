@@ -160,6 +160,10 @@
             </div>
             <p class="pdp__stock">✓ <span data-i18n="pdp_instock">Finns i lager</span></p>
             <p class="price__code" data-i18n="price_code">🚚 Fri frakt vid ordrar över 350 kr – kod FRIFRAKT</p>
+            <div class="ship-meter" id="shipMeter" aria-live="polite">
+              <p class="ship-meter__label" id="shipMeterLabel">🚚 350 kr kvar till fri frakt</p>
+              <div class="ship-meter__track"><div class="ship-meter__fill" id="shipMeterFill"></div></div>
+            </div>
             <div class="qty" aria-label="Antal">
               <button class="qty__btn" id="qtyMinus" aria-label="Minska">−</button>
               <span class="qty__val" id="qtyVal">1</span>
