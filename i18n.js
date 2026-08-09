@@ -11,7 +11,7 @@
       ann_compost: "♻️ 100% komposterbar",
       ann_delivery: "🚚 Snabb leverans i hela Sverige",
       ann_micro: "💧 Fria från mikroplast",
-      ann_code: "🏷️ SPARA50 – 50 kr rabatt vid ordrar över 350 kr",
+      ann_code: "🚚 Fri frakt vid ordrar över 350 kr – kod FRIFRAKT",
 
       nav_product: "Produkt",
       dd_instock: "✓ Finns i lager",
@@ -62,7 +62,7 @@
       feat_2: "🐗 Proteinbaserat galtborst",
       feat_3: "🚫 Helt utan plast, lim eller BPA",
       feat_4: "♻️ Allt är komposterbart",
-      price_code: "🏷️ 50 kr rabatt vid ordrar över 350 kr – kod SPARA50",
+      price_code: "🚚 Fri frakt vid ordrar över 350 kr – kod FRIFRAKT",
       add_cart: "Lägg i varukorg",
 
       bc_home: "Startsidan",
@@ -211,7 +211,7 @@
       ann_compost: "♻️ 100% compostable",
       ann_delivery: "🚚 Fast delivery across Sweden",
       ann_micro: "💧 Free from microplastics",
-      ann_code: "🏷️ SPARA50 – 50 kr off on orders over 350 kr",
+      ann_code: "🚚 Free shipping on orders over 350 kr – code FRIFRAKT",
 
       nav_product: "Product",
       dd_instock: "✓ In stock",
@@ -262,7 +262,7 @@
       feat_2: "🐗 Protein-based boar bristles",
       feat_3: "🚫 No plastic, glue or BPA",
       feat_4: "♻️ Everything is compostable",
-      price_code: "🏷️ 50 kr off on orders over 350 kr – code SPARA50",
+      price_code: "🚚 Free shipping on orders over 350 kr – code FRIFRAKT",
       add_cart: "Add to cart",
 
       bc_home: "Home",
