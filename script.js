@@ -155,16 +155,19 @@
   /* ---------- Free-shipping progress meter (product page) ---------- */
   const FREE_SHIP_THRESHOLD = 350; // kr
   function updateShipMeter(sum) {
-    const wrap = $("#shipMeter");
-    if (!wrap) return; // only present on the product page
+    const meters = $$(".ship-meter"); // product page + cart drawer
+    if (!meters.length) return;
     const pct = Math.max(0, Math.min(100, Math.round((sum / FREE_SHIP_THRESHOLD) * 100)));
     const remaining = Math.max(0, FREE_SHIP_THRESHOLD - sum);
     const unlocked = sum >= FREE_SHIP_THRESHOLD;
-    const fill = $("#shipMeterFill");
-    const label = $("#shipMeterLabel");
-    if (fill) fill.style.width = pct + "%";
-    wrap.classList.toggle("is-unlocked", unlocked);
-    if (label) label.textContent = unlocked ? t("ship_meter_done") : t("ship_meter_left", { amount: remaining });
+    const txt = unlocked ? t("ship_meter_done") : t("ship_meter_left", { amount: remaining });
+    meters.forEach((wrap) => {
+      const fill = wrap.querySelector(".ship-meter__fill");
+      const label = wrap.querySelector(".ship-meter__label");
+      if (fill) fill.style.width = pct + "%";
+      wrap.classList.toggle("is-unlocked", unlocked);
+      if (label) label.textContent = txt;
+    });
   }
 
   function bumpCount() {
