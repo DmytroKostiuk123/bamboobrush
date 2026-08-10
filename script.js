@@ -146,8 +146,8 @@
     count.textContent = n;
     count.hidden = n === 0;
 
-    // flat-rate shipping note (the 49 kr DHL fee is added by Stripe at checkout)
-    $("#cartShip").textContent = cart.length === 0 ? "" : t("js_ship_note");
+    // flat-rate shipping note — hidden once free shipping is unlocked (the meter shows the code)
+    $("#cartShip").textContent = (cart.length === 0 || sum >= FREE_SHIP_THRESHOLD) ? "" : t("js_ship_note");
 
     updateShipMeter(sum);
   }
@@ -166,7 +166,7 @@
       const label = wrap.querySelector(".ship-meter__label");
       if (fill) fill.style.width = pct + "%";
       wrap.classList.toggle("is-unlocked", unlocked);
-      if (label) label.textContent = txt;
+      if (label) label.innerHTML = txt; // txt is a trusted i18n string (may contain a code chip)
     });
   }
 
