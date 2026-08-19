@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://bamboobrush.se/</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://bamboobrush.se/assets/bambutandborste-plastfri-hero.jpg</image:loc></image:image>
+    <image:image><image:loc>https://bamboobrush.se/assets/bambutandborste-galtborst-naturfibrer.jpg</image:loc></image:image>
+    <image:image><image:loc>https://bamboobrush.se/assets/ekotandborste-nylonstran-plast.jpg</image:loc></image:image>
+    <image:image><image:loc>https://bamboobrush.se/assets/galtborst-naturborst-narbild.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://bamboobrush.se/produkter/bambutandborste-6-pack.html</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image><image:loc>https://bamboobrush.se/assets/bambutandborste-6-pack.jpg</image:loc></image:image>
+    <image:image><image:loc>https://bamboobrush.se/assets/bambutandborste-6-pack-galleri-2.jpg</image:loc></image:image>
+    <image:image><image:loc>https://bamboobrush.se/assets/bambutandborste-6-pack-galleri-3.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://bamboobrush.se/produkter/tandtrad-silke-bambu.html</loc>
