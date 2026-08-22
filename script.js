@@ -77,10 +77,12 @@
     qtyMinus.addEventListener("click", () => {
       pdpQty = Math.max(MIN_QTY, pdpQty - 1);
       qtyVal.textContent = pdpQty;
+      updateShipMeter(); // let the free-shipping meter follow the quantity picker
     });
     qtyPlus.addEventListener("click", () => {
       pdpQty = Math.min(MAX_QTY, pdpQty + 1);
       qtyVal.textContent = pdpQty;
+      updateShipMeter();
     });
   }
 
@@ -149,24 +151,29 @@
     // flat-rate shipping note — hidden once free shipping is unlocked (the meter shows the code)
     $("#cartShip").textContent = (cart.length === 0 || sum >= FREE_SHIP_THRESHOLD) ? "" : t("js_ship_note");
 
-    updateShipMeter(sum);
+    updateShipMeter();
   }
 
   /* ---------- Free-shipping progress meter (product page) ---------- */
   const FREE_SHIP_THRESHOLD = 350; // kr
-  function updateShipMeter(sum) {
-    const meters = $$(".ship-meter"); // product page + cart drawer
-    if (!meters.length) return;
+  function renderMeter(wrap, sum) {
     const pct = Math.max(0, Math.min(100, Math.round((sum / FREE_SHIP_THRESHOLD) * 100)));
     const remaining = Math.max(0, FREE_SHIP_THRESHOLD - sum);
     const unlocked = sum >= FREE_SHIP_THRESHOLD;
     const txt = unlocked ? t("ship_meter_done") : t("ship_meter_left", { amount: remaining });
-    meters.forEach((wrap) => {
-      const fill = wrap.querySelector(".ship-meter__fill");
-      const label = wrap.querySelector(".ship-meter__label");
-      if (fill) fill.style.width = pct + "%";
-      wrap.classList.toggle("is-unlocked", unlocked);
-      if (label) label.innerHTML = txt; // txt is a trusted i18n string (may contain a code chip)
+    const fill = wrap.querySelector(".ship-meter__fill");
+    const label = wrap.querySelector(".ship-meter__label");
+    if (fill) fill.style.width = pct + "%";
+    wrap.classList.toggle("is-unlocked", unlocked);
+    if (label) label.innerHTML = txt; // txt is a trusted i18n string (may contain a code chip)
+  }
+  // Cart-drawer meter (.ship-meter--cart) tracks the cart total; the product-page
+  // meter previews the quantity picker so it moves live as you change "antal".
+  function updateShipMeter() {
+    const cartSum = totalSum();
+    $$(".ship-meter").forEach((wrap) => {
+      const isCart = wrap.classList.contains("ship-meter--cart");
+      renderMeter(wrap, isCart ? cartSum : pdpQty * PRODUCT.price);
     });
   }
 
