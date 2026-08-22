@@ -222,8 +222,10 @@
     // NOTE: this is only a convenience guard — the browser is not a trust boundary.
     // The Cloudflare Worker MUST re-validate qty and check the request Origin server-side.
     const qty = Math.min(MAX_QTY, Math.max(MIN_QTY, Math.trunc(totalQty()) || MIN_QTY));
-    // hand off to the Cloudflare Worker, which creates a Stripe Checkout session with the chosen quantity
-    window.location.href = CHECKOUT_URL + "?qty=" + qty;
+    // hand off to the Cloudflare Worker, which creates a Stripe Checkout session with the chosen quantity.
+    // Pass the chosen site language (bb-lang) so the order-confirmation email goes out in SV or EN.
+    const lang = (localStorage.getItem("bb-lang") || "sv") === "en" ? "en" : "sv";
+    window.location.href = CHECKOUT_URL + "?qty=" + qty + "&lang=" + lang;
   });
 
   /* ---------- Copy email links (e.g. FAQ "Kontakta oss") ---------- */
