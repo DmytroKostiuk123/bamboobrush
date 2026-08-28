@@ -7,3 +7,6 @@ Thumbs.db
 
 # Internal handoff notes - never publish
 PROJECT-NOTES.md
+
+# Local knowledge-graph tooling output - never publish
+graphify-out/
