@@ -402,7 +402,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .gwcard__badge--no { background: #c0492a; }
 @media (min-width: 1024px) {
   /* Big desktop screens only: lift the badge up onto the handle (roomier image, better balance). Mobile keeps it at the bottom so it never covers the bristles. */
-  .gwcard__badge { top: 30%; bottom: auto; }
+  .gwcard__badge { top: 18%; bottom: auto; }
 }
 .gwcard__cap { padding: 16px 18px; text-align: center; }
 .gwcard__cap strong { display: block; font-family: var(--font-head); font-size: 1.12rem; margin-bottom: 4px; }
