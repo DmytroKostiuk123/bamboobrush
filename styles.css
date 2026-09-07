@@ -722,3 +722,17 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ===== 404 – sidan hittades inte ===== */
+.nf{max-width:660px;margin:0 auto;padding:clamp(56px,10vw,110px) 20px;min-height:58vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.nf__code{font-family:var(--font-head);font-weight:800;line-height:.9;margin:0;
+  font-size:clamp(88px,18vw,168px);color:var(--green-500);letter-spacing:-.02em}
+.nf__title{font-family:var(--font-head);margin:.35em 0 .25em;color:var(--ink);
+  font-size:clamp(24px,4.4vw,36px);line-height:1.15}
+.nf__text{color:var(--muted);font-size:1.06rem;line-height:1.6;max-width:46ch;margin:0 auto 1.7em}
+.nf__actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.nf__links{margin-top:2.6em;display:flex;gap:8px 22px;flex-wrap:wrap;justify-content:center;
+  font-size:.95rem;color:var(--muted)}
+.nf__links a{color:var(--green-500);text-decoration:none;font-weight:600}
+.nf__links a:hover{text-decoration:underline}

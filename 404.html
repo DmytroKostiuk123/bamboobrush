@@ -1,21 +1,88 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Fångar gamla/borttagna URL:er (bl.a. gamla Shopify-länkar som fortfarande
-       ligger i Google) och skickar besökaren vidare till startsidan. -->
-  <meta http-equiv="refresh" content="0; url=https://bamboobrush.se/" />
-  <meta name="robots" content="noindex" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="Sidan kunde inte hittas. Gå tillbaka till BambooBrush – plastfria tandborstar i bambu." />
   <meta name="theme-color" content="#0f140d" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.googleadservices.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://www.google.com https://www.google.se https://googleads.g.doubleclick.net; connect-src 'self' https://www.googletagmanager.com https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com; frame-src https://td.doubleclick.net https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script src="/gtag.js"></script>
   <title>Sidan hittades inte – BambooBrush</title>
-  <script>window.location.replace("https://bamboobrush.se/");</script>
+  <script src="/boot.js"></script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/assets/favicon-180.png" />
+  <script src="/blogg/blog.js"></script>
 </head>
-<body style="font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:#0f140d;color:#eef5ee;display:grid;place-items:center;min-height:100vh;margin:0;text-align:center;padding:24px;">
-  <div>
-    <p style="font-size:1.1rem;">Den här sidan finns inte längre.</p>
-    <p>Du skickas vidare till <a href="https://bamboobrush.se/" style="color:#79cf90;">bamboobrush.se</a> …</p>
-  </div>
+<body>
+  <header class="header header--policy">
+    <div class="container header__inner">
+      <div class="header__left">
+        <button class="theme-toggle" id="themeToggle" aria-label="Växla mörkt och ljust läge" title="Mörkt / ljust läge">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></g></svg>
+        </button>
+        <a href="/" class="logo">
+          <span class="logo__chip" role="img" aria-label="BambooBrush logotyp"></span>
+          <span class="logo__text">Bamboo<strong>Brush</strong></span>
+        </a>
+      </div>
+      <a href="/" class="btn btn--ghost">← Till butiken</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="nf">
+      <p class="nf__code">404</p>
+      <h1 class="nf__title">Den här sidan finns inte</h1>
+      <p class="nf__text">Hoppsan. Sidan du letade efter har flyttat eller tagits bort – kanske ledde en gammal länk hit. Ingen fara, allt annat finns kvar.</p>
+      <div class="nf__actions">
+        <a href="/" class="btn btn--primary">Till startsidan</a>
+        <a href="/produkter/bambutandborste-6-pack.html" class="btn btn--ghost">Se tandborsten</a>
+      </div>
+      <nav class="nf__links" aria-label="Populära sidor">
+        <a href="/blogg/">Blogg</a>
+        <a href="/om-oss.html">Om oss</a>
+        <a href="/policies/contact-information.html">Kontakt</a>
+        <a href="/policies/shipping-policy.html">Frakt &amp; leverans</a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="logo logo--light">
+          <span class="logo__chip" role="img" aria-label="BambooBrush logotyp"></span>
+          <span class="logo__text">Bamboo<strong>Brush</strong></span>
+        </a>
+        <p>Plastfri munvård, tillverkad med omtanke om dig och planeten. Skickas från Sverige.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Handla</h4>
+        <a href="/produkter/bambutandborste-6-pack.html">Tandborste 6-pack</a>
+        <a href="/#why">Varför bambu</a>
+      </div>
+      <div class="footer__col">
+        <h4>Läs mer</h4>
+        <a href="/blogg/">Bloggen</a>
+        <a href="/#faq">Vanliga frågor</a>
+        <a href="/policies/contact-information.html">Kontakta oss</a>
+      </div>
+      <div class="footer__col">
+        <h4>Villkor</h4>
+        <a href="/policies/privacy-policy.html">Integritetspolicy</a>
+        <a href="/policies/refund-policy.html">Returpolicy</a>
+        <a href="/policies/terms-of-service.html">Köpvillkor</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> BambooBrush. Alla rättigheter förbehållna.</span>
+      <span class="footer__pay">VISA · Mastercard · Klarna</span>
+    </div>
+  </footer>
 </body>
 </html>
