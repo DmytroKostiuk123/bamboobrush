@@ -148,7 +148,7 @@
     count.textContent = n;
     count.hidden = n === 0;
 
-    // flat-rate shipping note — hidden once free shipping is unlocked (the meter shows the code)
+    // flat-rate shipping note — hidden once free shipping is unlocked (2+ packs, automatic)
     $("#cartShip").textContent = (cart.length === 0 || sum >= FREE_SHIP_THRESHOLD) ? "" : t("js_ship_note");
 
     updateShipMeter();
@@ -165,7 +165,7 @@
     const label = wrap.querySelector(".ship-meter__label");
     if (fill) fill.style.width = pct + "%";
     wrap.classList.toggle("is-unlocked", unlocked);
-    if (label) label.innerHTML = txt; // txt is a trusted i18n string (may contain a code chip)
+    if (label) label.innerHTML = txt; // txt is a trusted i18n string
   }
   // Cart-drawer meter (.ship-meter--cart) tracks the cart total; the product-page
   // meter previews the quantity picker so it moves live as you change "antal".

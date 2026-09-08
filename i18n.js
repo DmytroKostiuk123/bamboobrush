@@ -11,7 +11,7 @@
       ann_compost: "♻️ Plastfri & komposterbar",
       ann_delivery: "🚚 Snabb leverans i hela Sverige",
       ann_micro: "💧 Fria från mikroplast",
-      ann_code: "🚚 Fri frakt vid ordrar över 350 kr – kod FRIFRAKT",
+      ann_code: "🚚 Fri frakt från 2 förpackningar",
 
       nav_product: "Produkt",
       dd_instock: "✓ Finns i lager",
@@ -63,7 +63,7 @@
       feat_2: "🐗 Proteinbaserat galtborst",
       feat_3: "🚫 Helt utan plast, lim eller BPA",
       feat_4: "♻️ Komposterbar tandborste",
-      price_code: "🚚 Fri frakt vid ordrar över 350 kr – kod FRIFRAKT",
+      price_code: "🚚 Fri frakt från 2 förpackningar",
       add_cart: "Lägg i varukorg",
 
       bc_home: "Startsidan",
@@ -100,7 +100,7 @@
       rev_js_error: "Kunde inte skicka just nu. Försök igen om en stund.",
       rev_js_anon: "Anonym",
       ship_meter_left: "🚚 {amount} kr kvar till fri frakt",
-      ship_meter_done: '🎉 Fri frakt! Ange kod <span class="ship-code">FRIFRAKT</span> i kassan',
+      ship_meter_done: '🎉 Fri frakt upplåst!',
       prod_meta: "🔒 Säker betalning · 30 dagars öppet köp · Frakt 49 kr",
 
       why_eyebrow: "Varför BambooBrush?",
@@ -214,7 +214,7 @@
       ann_compost: "♻️ Plastic-free & compostable",
       ann_delivery: "🚚 Fast delivery across Sweden",
       ann_micro: "💧 Free from microplastics",
-      ann_code: "🚚 Free shipping on orders over 350 kr – code FRIFRAKT",
+      ann_code: "🚚 Free shipping from 2 packs",
 
       nav_product: "Product",
       dd_instock: "✓ In stock",
@@ -266,7 +266,7 @@
       feat_2: "🐗 Protein-based boar bristles",
       feat_3: "🚫 No plastic, glue or BPA",
       feat_4: "♻️ Compostable toothbrush",
-      price_code: "🚚 Free shipping on orders over 350 kr – code FRIFRAKT",
+      price_code: "🚚 Free shipping from 2 packs",
       add_cart: "Add to cart",
 
       bc_home: "Home",
@@ -303,7 +303,7 @@
       rev_js_error: "Couldn't send right now. Please try again in a moment.",
       rev_js_anon: "Anonymous",
       ship_meter_left: "🚚 {amount} kr to go for free shipping",
-      ship_meter_done: '🎉 Free shipping! Enter code <span class="ship-code">FRIFRAKT</span> at checkout',
+      ship_meter_done: '🎉 Free shipping unlocked!',
       prod_meta: "🔒 Secure payment · 30-day returns · 49 kr shipping",
 
       why_eyebrow: "Why BambooBrush?",
