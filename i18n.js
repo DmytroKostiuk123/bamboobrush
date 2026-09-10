@@ -25,7 +25,7 @@
       theme_label: "Mörkt / ljust läge",
       buy_now: "Köp nu",
 
-      hero_h1: 'Plastfri tandborste – ren munvård utan <span class="hl">mikroplaster</span>.',
+      hero_h1: 'Plastfri bambutandborste – ren munvård utan <span class="hl">mikroplaster</span>.',
       hero_lead: "En plastfri tandborste i bambu med naturborst – för dig som inte vill få i dig mikroplast vid varje borstning.",
       hero_buy: "Köp 6-pack · 230 kr",
       hero_more: "Läs mer ↓",
@@ -57,8 +57,8 @@
       gw_link: "Läs hela historien →",
 
       prod_sticker: "Bästsäljare",
-      prod_title: "Tandborste 6-pack",
-      prod_desc: "Sex tandborstar i naturlig bambu med mjuka, BPA-fria borst. Ett års förbrukning för en person – eller perfekt att dela med familjen.",
+      prod_title: "Bambutandborste 6-pack",
+      prod_desc: "Sex bambutandborstar med naturborst av galtborst – inte nylon som de flesta. Ett års förbrukning för en person, eller perfekt att dela med familjen.",
       feat_1: "🌿 Handtag i naturlig bambu",
       feat_2: "🐗 Proteinbaserat galtborst",
       feat_3: "🚫 Helt utan plast, lim eller BPA",
@@ -228,7 +228,7 @@
       theme_label: "Dark / light mode",
       buy_now: "Buy now",
 
-      hero_h1: 'Plastic-free toothbrush – clean oral care without <span class="hl">microplastics</span>.',
+      hero_h1: 'Plastic-free bamboo toothbrush – clean oral care without <span class="hl">microplastics</span>.',
       hero_lead: "A plastic-free bamboo toothbrush with natural bristles – for you who'd rather not ingest microplastics with every brush.",
       hero_buy: "Buy 6-pack · 230 kr",
       hero_more: "Learn more ↓",
@@ -260,8 +260,8 @@
       gw_link: "Read the full story →",
 
       prod_sticker: "Bestseller",
-      prod_title: "Toothbrush 6-pack",
-      prod_desc: "Six toothbrushes in natural bamboo with soft, BPA-free bristles. A year's supply for one person – or perfect to share with the family.",
+      prod_title: "Bamboo toothbrush 6-pack",
+      prod_desc: "Six bamboo toothbrushes with natural boar bristles – not the nylon most brands use. A year's supply for one person, or perfect to share with the family.",
       feat_1: "🌿 Handle in natural bamboo",
       feat_2: "🐗 Protein-based boar bristles",
       feat_3: "🚫 No plastic, glue or BPA",
