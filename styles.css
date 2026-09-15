@@ -736,3 +736,37 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
   font-size:.95rem;color:var(--muted)}
 .nf__links a{color:var(--green-500);text-decoration:none;font-weight:600}
 .nf__links a:hover{text-decoration:underline}
+
+/* ===== Package picker (bundles) ===== */
+.price__was { margin-left: 2px; color: var(--muted); text-decoration: line-through; font-size: 1.15rem; font-family: var(--font-head); }
+.pack-picker__label {
+  font-family: var(--font-body); font-size: .78rem; font-weight: 700; color: var(--muted);
+  letter-spacing: .04em; text-transform: uppercase; margin: 4px 0 10px;
+}
+.pack-picker { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 0 18px; }
+.pack-opt {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 16px 8px 13px; border: 1.5px solid var(--line); border-radius: 14px;
+  background: var(--white); color: var(--ink); cursor: pointer; text-align: center;
+  font-family: var(--font-body);
+  transition: border-color .18s ease, background .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.pack-opt:hover { border-color: var(--green-700); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.pack-opt.is-active { border-color: var(--green-700); background: var(--green-100); box-shadow: var(--shadow-sm); }
+.pack-opt__title { font-weight: 800; font-size: .98rem; color: var(--ink); }
+.pack-opt__sub { font-size: .72rem; color: var(--muted); }
+.pack-opt__price { font-family: var(--font-head); font-size: 1.2rem; color: var(--green-700); margin-top: 2px; }
+.pack-opt__note { font-size: .72rem; color: var(--muted); line-height: 1.25; }
+.pack-opt.is-active .pack-opt__note { color: var(--green-700); font-weight: 700; }
+/* badge matches the site's .product__sticker pill */
+.pack-opt__badge {
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%); white-space: nowrap;
+  background: var(--green-700); color: #fff; font-size: .62rem; font-weight: 700;
+  letter-spacing: .04em; padding: 3px 10px; border-radius: 100px; box-shadow: var(--shadow-sm);
+}
+@media (max-width: 400px) {
+  .pack-picker { gap: 7px; }
+  .pack-opt { padding: 14px 4px 11px; }
+  .pack-opt__title { font-size: .9rem; }
+  .pack-opt__note { font-size: .66rem; }
+}

@@ -161,13 +161,37 @@
 
           <div class="product__buy">
             <div class="price">
-              <span class="price__now">230 kr</span>
+              <span class="price__now" id="pdpPrice">230 kr</span>
+              <span class="price__was" id="pdpWas" hidden></span>
             </div>
             <p class="pdp__stock">✓ <span data-i18n="pdp_instock">Finns i lager</span></p>
-            <p class="price__code" data-i18n="price_code">🚚 Fri frakt vid ordrar över 350 kr – kod FRIFRAKT</p>
+            <p class="price__code" data-i18n="price_code">🚚 Fri frakt från 2 förpackningar</p>
             <div class="ship-meter" id="shipMeter" aria-live="polite">
               <p class="ship-meter__label" id="shipMeterLabel">🚚 350 kr kvar till fri frakt</p>
               <div class="ship-meter__track"><div class="ship-meter__fill" id="shipMeterFill"></div></div>
+            </div>
+            <p class="pack-picker__label" data-i18n="pack_pick_label">Välj antal förpackningar</p>
+            <div class="pack-picker" id="packPicker" role="group" aria-label="Välj antal förpackningar">
+              <button type="button" class="pack-opt is-active" data-pack="1">
+                <span class="pack-opt__title">1 × 6-pack</span>
+                <span class="pack-opt__sub" data-i18n="pack1_sub">6 borstar totalt</span>
+                <span class="pack-opt__price">230 kr</span>
+                <span class="pack-opt__note" data-i18n="pack1_note">+ 49 kr frakt</span>
+              </button>
+              <button type="button" class="pack-opt" data-pack="2">
+                <span class="pack-opt__badge" data-i18n="pack_pop">Populär</span>
+                <span class="pack-opt__title">2 × 6-pack</span>
+                <span class="pack-opt__sub" data-i18n="pack2_sub">12 borstar totalt</span>
+                <span class="pack-opt__price">420 kr</span>
+                <span class="pack-opt__note" data-i18n="pack2_note">Spara 40 kr · fri frakt</span>
+              </button>
+              <button type="button" class="pack-opt" data-pack="3">
+                <span class="pack-opt__badge" data-i18n="pack_best">Bäst värde</span>
+                <span class="pack-opt__title">3 × 6-pack</span>
+                <span class="pack-opt__sub" data-i18n="pack3_sub">18 borstar totalt</span>
+                <span class="pack-opt__price">590 kr</span>
+                <span class="pack-opt__note" data-i18n="pack3_note">Spara 100 kr · fri frakt</span>
+              </button>
             </div>
             <div class="qty" aria-label="Antal">
               <button class="qty__btn" id="qtyMinus" aria-label="Minska">−</button>

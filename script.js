@@ -8,6 +8,11 @@
   const MAX_QTY = 20;
   const CHECKOUT_URL = "https://bamboobrush-checkout.dmytro-kostiuk123.workers.dev/";
 
+  // Volume discount (kr off the raw qty×price total). MUST stay identical to
+  // packDiscountKr() in the checkout Worker — client display and Stripe charge
+  // have to agree. 2-pack −40, 3-pack and up −100.
+  function packDiscountKr(q) { return q >= 3 ? 100 : q === 2 ? 40 : 0; }
+
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const kr = (n) => `${n.toLocaleString("sv-SE")} kr`;
@@ -73,17 +78,45 @@
   const qtyVal = $("#qtyVal");
   const qtyMinus = $("#qtyMinus");
   const qtyPlus = $("#qtyPlus");
+  const packPicker = $("#packPicker");
+  const pdpPrice = $("#pdpPrice");
+  const pdpWas = $("#pdpWas");
+
+  // Discounted total shown on the PDP for the chosen quantity.
+  function pdpPackTotal(q) { return q * PRODUCT.price - packDiscountKr(q); }
+
+  function refreshPdpPrice() {
+    if (pdpPrice) pdpPrice.textContent = kr(pdpPackTotal(pdpQty));
+    if (pdpWas) {
+      const disc = packDiscountKr(pdpQty);
+      if (disc > 0) { pdpWas.textContent = kr(pdpQty * PRODUCT.price); pdpWas.hidden = false; }
+      else pdpWas.hidden = true;
+    }
+    if (packPicker) {
+      $$(".pack-opt", packPicker).forEach((b) =>
+        b.classList.toggle("is-active", Number(b.dataset.pack) === pdpQty));
+    }
+  }
+
+  // Single entry point so the stepper, the pack picker, the price and the
+  // free-shipping meter never drift apart.
+  function setPdpQty(q) {
+    pdpQty = Math.min(MAX_QTY, Math.max(MIN_QTY, q || MIN_QTY));
+    if (qtyVal) qtyVal.textContent = pdpQty;
+    refreshPdpPrice();
+    updateShipMeter(); // let the free-shipping meter follow the quantity picker
+  }
+
   if (qtyVal && qtyMinus && qtyPlus) {
-    qtyMinus.addEventListener("click", () => {
-      pdpQty = Math.max(MIN_QTY, pdpQty - 1);
-      qtyVal.textContent = pdpQty;
-      updateShipMeter(); // let the free-shipping meter follow the quantity picker
+    qtyMinus.addEventListener("click", () => setPdpQty(pdpQty - 1));
+    qtyPlus.addEventListener("click", () => setPdpQty(pdpQty + 1));
+  }
+  if (packPicker) {
+    packPicker.addEventListener("click", (e) => {
+      const b = e.target.closest(".pack-opt");
+      if (b) setPdpQty(Number(b.dataset.pack));
     });
-    qtyPlus.addEventListener("click", () => {
-      pdpQty = Math.min(MAX_QTY, pdpQty + 1);
-      qtyVal.textContent = pdpQty;
-      updateShipMeter();
-    });
+    refreshPdpPrice();
   }
 
   /* ---------- Cart logic ---------- */
@@ -142,14 +175,20 @@
     }
 
     const sum = totalSum();
-    $("#cartTotal").textContent = kr(sum);
-
     const n = totalQty();
+    const disc = packDiscountKr(n);
+    $("#cartTotal").textContent = kr(sum - disc);
+
     count.textContent = n;
     count.hidden = n === 0;
 
-    // flat-rate shipping note — hidden once free shipping is unlocked (2+ packs, automatic)
-    $("#cartShip").textContent = (cart.length === 0 || sum >= FREE_SHIP_THRESHOLD) ? "" : t("js_ship_note");
+    // discount + shipping summary lines (trusted i18n strings)
+    const lines = [];
+    if (disc > 0) lines.push(t("cart_discount", { amount: disc }));
+    if (cart.length > 0) {
+      lines.push((n >= 2 || sum >= FREE_SHIP_THRESHOLD) ? t("cart_freeship") : t("js_ship_note"));
+    }
+    $("#cartShip").innerHTML = lines.join("<br>");
 
     updateShipMeter();
   }
