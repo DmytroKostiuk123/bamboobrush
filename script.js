@@ -2,16 +2,44 @@
 (() => {
   "use strict";
 
-  // Display name/variant come from the i18n dictionary (prod_title / js_variant), not from here.
-  const PRODUCT = { id: "tb6", price: 230, img: "/assets/bambutandborste-6-pack.jpg" };
+  // Per-page product config. A product page may carry a hidden element
+  // <div id="bbProductConfig" data-id="heads" data-price="179" ...> — read here
+  // (CSP blocks inline <script>, so we use data-attributes, not window globals).
+  // Without it we default to the 6-pack (tb6) so existing pages are unaffected.
+  // title/variant fall back to the i18n dictionary (prod_title / js_variant).
+  function readProductConfig() {
+    const el = document.getElementById("bbProductConfig");
+    if (!el) return {};
+    const d = el.dataset, cfg = {}, pd = {};
+    if (d.id) cfg.id = d.id;
+    if (d.price) cfg.price = Number(d.price);
+    if (d.img) cfg.img = d.img;
+    if (d.checkout) cfg.checkoutProduct = d.checkout;
+    if (d.title) cfg.title = d.title;
+    if (d.variant) cfg.variant = d.variant;
+    if (d.discount2) pd[2] = Number(d.discount2);
+    if (d.discount3) pd[3] = Number(d.discount3);
+    if (Object.keys(pd).length) cfg.packDiscount = pd;
+    return cfg;
+  }
+  const PRODUCT = Object.assign(
+    { id: "tb6", price: 230, img: "/assets/bambutandborste-6-pack.jpg",
+      checkoutProduct: "tb6", packDiscount: { 2: 40, 3: 100 } },
+    readProductConfig()
+  );
   const MIN_QTY = 1;
   const MAX_QTY = 20;
   const CHECKOUT_URL = "https://bamboobrush-checkout.dmytro-kostiuk123.workers.dev/";
 
   // Volume discount (kr off the raw qty×price total). MUST stay identical to
-  // packDiscountKr() in the checkout Worker — client display and Stripe charge
-  // have to agree. 2-pack −40, 3-pack and up −100.
-  function packDiscountKr(q) { return q >= 3 ? 100 : q === 2 ? 40 : 0; }
+  // packDiscountKr() in the checkout Worker for THIS product — client display and
+  // Stripe charge have to agree. Values come from PRODUCT.packDiscount.
+  function packDiscountKr(q) {
+    const d = PRODUCT.packDiscount || {};
+    if (q >= 3) return d[3] || 0;
+    if (q === 2) return d[2] || 0;
+    return 0;
+  }
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -125,7 +153,7 @@
     if (found) found.qty += qty;
     else cart.push({ ...PRODUCT, qty });
     renderCart();
-    toast(t("js_added", { qty: qty, name: t("prod_title") }));
+    toast(t("js_added", { qty: qty, name: PRODUCT.title || t("prod_title") }));
     openCart();
     bumpCount();
   }
@@ -160,8 +188,8 @@
         li.innerHTML = `
           <div class="cart-item__img"><img src="${item.img}" alt="" loading="lazy" decoding="async" /></div>
           <div class="cart-item__info">
-            <div class="cart-item__name">${t("prod_title")}</div>
-            <div class="cart-item__variant">${t("js_variant")}</div>
+            <div class="cart-item__name">${PRODUCT.title || t("prod_title")}</div>
+            <div class="cart-item__variant">${PRODUCT.variant || t("js_variant")}</div>
             <div class="cart-item__price">${kr(item.price * item.qty)}</div>
             <div class="cart-item__qty">
               <button data-dec="${idx}" aria-label="Minska">−</button>
@@ -271,7 +299,8 @@
     // hand off to the Cloudflare Worker, which creates a Stripe Checkout session with the chosen quantity.
     // Pass the chosen site language (bb-lang) so the order-confirmation email goes out in SV or EN.
     const lang = (localStorage.getItem("bb-lang") || "sv") === "en" ? "en" : "sv";
-    window.location.href = CHECKOUT_URL + "?qty=" + qty + "&lang=" + lang;
+    const product = encodeURIComponent(PRODUCT.checkoutProduct || "tb6");
+    window.location.href = CHECKOUT_URL + "?qty=" + qty + "&lang=" + lang + "&product=" + product;
   });
 
   /* ---------- Copy email links (e.g. FAQ "Kontakta oss") ---------- */
