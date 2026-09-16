@@ -770,3 +770,12 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
   .pack-opt__title { font-size: .9rem; }
   .pack-opt__note { font-size: .66rem; }
 }
+
+/* ===== Menu: draw attention to in-stock products ===== */
+/* Dim the "coming soon" items so the buyable ones pop by contrast (:has, modern browsers). */
+.nav-dd__item:has(.nav-dd__badge--soon),
+.mobile-nav__sub:has(.mnav-badge--soon) { opacity: .5; transition: opacity .15s; }
+.nav-dd__item:has(.nav-dd__badge--soon):hover,
+.mobile-nav__sub:has(.mnav-badge--soon):hover { opacity: .78; }
+/* Emphasise the in-stock items a touch */
+.nav-dd__item:has(.nav-dd__badge--in) .nav-dd__txt strong { font-weight: 800; }
