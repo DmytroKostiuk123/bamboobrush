@@ -287,14 +287,12 @@
     wrap.classList.toggle("is-unlocked", unlocked);
     if (label) label.innerHTML = txt; // txt is a trusted i18n string
   }
-  // Cart-drawer meter (.ship-meter--cart) tracks the cart total; the product-page
-  // meter previews the quantity picker so it moves live as you change "antal".
+  // Every free-shipping meter — the cart drawer's AND the one on the product page —
+  // tracks the SAME value: the real cart total. So the two green bars are always in
+  // sync and never contradict each other (empty cart = empty bar on both).
   function updateShipMeter() {
-    const cartSum = totalSum();
-    $$(".ship-meter").forEach((wrap) => {
-      const isCart = wrap.classList.contains("ship-meter--cart");
-      renderMeter(wrap, isCart ? cartSum : pdpQty * PRODUCT.price);
-    });
+    const sum = totalSum();
+    $$(".ship-meter").forEach((wrap) => renderMeter(wrap, sum));
   }
 
   function bumpCount() {
