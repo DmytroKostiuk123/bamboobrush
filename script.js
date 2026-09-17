@@ -287,12 +287,17 @@
     wrap.classList.toggle("is-unlocked", unlocked);
     if (label) label.innerHTML = txt; // txt is a trusted i18n string
   }
-  // Every free-shipping meter — the cart drawer's AND the one on the product page —
-  // tracks the SAME value: the real cart total. So the two green bars are always in
-  // sync and never contradict each other (empty cart = empty bar on both).
+  // The cart-drawer meter (.ship-meter--cart) shows the real cart total. The
+  // product-page meter previews the cart PLUS the current picker selection — i.e.
+  // what you'll have after "Lägg i varukorg" — so it measures live as you change
+  // "antal", and it converges with the cart meter when you add. With an empty cart
+  // (the usual case on a product page) that's simply pdpQty × price.
   function updateShipMeter() {
-    const sum = totalSum();
-    $$(".ship-meter").forEach((wrap) => renderMeter(wrap, sum));
+    const cartSum = totalSum();
+    $$(".ship-meter").forEach((wrap) => {
+      const isCart = wrap.classList.contains("ship-meter--cart");
+      renderMeter(wrap, isCart ? cartSum : cartSum + pdpQty * PRODUCT.price);
+    });
   }
 
   function bumpCount() {
