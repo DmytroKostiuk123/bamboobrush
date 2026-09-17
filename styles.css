@@ -129,6 +129,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .btn--primary:hover { background: var(--green-900); transform: translateY(-2px); }
 .btn--ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
 .btn--ghost:hover { border-color: var(--green-700); background: var(--white); }
+.cart__keep { margin-top: 8px; }
 .btn--lg { padding: 16px 32px; font-size: 1.02rem; }
 .btn--block { width: 100%; }
 

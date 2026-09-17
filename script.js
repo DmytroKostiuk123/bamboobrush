@@ -322,6 +322,10 @@
 
   $("#cartBtn").addEventListener("click", () => (cartEl.classList.contains("is-open") ? closeCart() : openCart()));
   $("#cartClose").addEventListener("click", closeCart);
+  // "Fortsätt handla" just closes the drawer so the shopper can keep browsing and
+  // add more products — the cart persists across pages, so nothing is lost.
+  const keepShopping = $("#keepShopping");
+  if (keepShopping) keepShopping.addEventListener("click", closeCart);
   overlay.addEventListener("click", closeCart);
   document.addEventListener("keydown", (e) => e.key === "Escape" && closeCart());
 

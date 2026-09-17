@@ -196,6 +196,7 @@
       cart_empty: "Din varukorg är tom. 🌿",
       cart_total: "Summa",
       cart_checkout: "Till kassan",
+      cart_keep: "Fortsätt handla",
       cart_secure: "🔒 Säker betalning · Frakt 49 kr (DHL)",
 
       js_variant: "Naturell bambu",
@@ -410,6 +411,7 @@
       cart_empty: "Your cart is empty. 🌿",
       cart_total: "Total",
       cart_checkout: "Checkout",
+      cart_keep: "Continue shopping",
       cart_secure: "🔒 Secure payment · 49 kr shipping (DHL)",
 
       js_variant: "Natural bamboo",
