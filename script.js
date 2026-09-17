@@ -47,7 +47,34 @@
   // i18n helper (falls back to the key if i18n.js isn't loaded)
   const t = (key, vars) => (window.I18N ? window.I18N.t(key, vars) : key);
 
-  let cart = [];
+  // Cart persists across pages/visits in localStorage so a shopper can combine
+  // different products (e.g. a 6-pack + brush heads) into one order. Each stored
+  // item is self-contained (id, price, title, variant, img, checkout id, and its
+  // own volume-discount table) so ANY shop page can render it correctly.
+  const CART_KEY = "bb-cart";
+  function loadCart() {
+    try {
+      const arr = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+      if (!Array.isArray(arr)) return [];
+      return arr
+        .filter((i) => i && i.id != null && Number.isFinite(+i.price) && Number.isFinite(+i.qty) && +i.qty > 0)
+        .map((i) => ({
+          id: String(i.id),
+          price: +i.price,
+          img: String(i.img || ""),
+          checkoutProduct: String(i.checkoutProduct || i.id),
+          title: i.title ? String(i.title) : "",
+          variant: i.variant ? String(i.variant) : "",
+          packDiscount: (i.packDiscount && typeof i.packDiscount === "object") ? i.packDiscount : {},
+          qty: Math.min(MAX_QTY, Math.max(1, Math.trunc(+i.qty))),
+        }));
+    } catch (e) { return []; }
+  }
+  function saveCart() {
+    try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch (e) {}
+  }
+
+  let cart = loadCart();
   let pdpQty = 1;
 
   /* ---------- Theme toggle ---------- */
@@ -150,8 +177,18 @@
   /* ---------- Cart logic ---------- */
   function addToCart(qty = 1) {
     const found = cart.find((i) => i.id === PRODUCT.id);
-    if (found) found.qty += qty;
-    else cart.push({ ...PRODUCT, qty });
+    if (found) found.qty = Math.min(MAX_QTY, found.qty + qty);
+    else cart.push({
+      id: PRODUCT.id,
+      price: PRODUCT.price,
+      img: PRODUCT.img,
+      checkoutProduct: PRODUCT.checkoutProduct || PRODUCT.id,
+      title: PRODUCT.title || "",
+      variant: PRODUCT.variant || "",
+      packDiscount: PRODUCT.packDiscount || {},
+      qty: Math.min(MAX_QTY, Math.max(1, qty)),
+    });
+    saveCart();
     renderCart();
     toast(t("js_added", { qty: qty, name: PRODUCT.title || t("prod_title") }));
     openCart();
@@ -159,18 +196,34 @@
   }
 
   function changeQty(idx, delta) {
-    cart[idx].qty += delta;
+    if (!cart[idx]) return;
+    cart[idx].qty = Math.min(MAX_QTY, cart[idx].qty + delta);
     if (cart[idx].qty <= 0) cart.splice(idx, 1);
+    saveCart();
     renderCart();
   }
 
   function removeItem(idx) {
     cart.splice(idx, 1);
+    saveCart();
     renderCart();
   }
 
   function totalQty() { return cart.reduce((s, i) => s + i.qty, 0); }
   function totalSum() { return cart.reduce((s, i) => s + i.qty * i.price, 0); }
+  // Volume discount is per product: each line earns its OWN discount from its own
+  // quantity, then we sum them. MUST match the checkout Worker's per-item logic.
+  function itemDiscountKr(item) {
+    const d = item.packDiscount || {};
+    if (item.qty >= 3) return d[3] || 0;
+    if (item.qty === 2) return d[2] || 0;
+    return 0;
+  }
+  function cartDiscountKr() { return cart.reduce((s, i) => s + itemDiscountKr(i), 0); }
+  // Escape values that originate from localStorage (viewer-writable) before they
+  // go into innerHTML, so a tampered cart can't inject markup into its own render.
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   function renderCart() {
     const items = $("#cartItems");
@@ -186,10 +239,10 @@
         const li = document.createElement("li");
         li.className = "cart-item";
         li.innerHTML = `
-          <div class="cart-item__img"><img src="${item.img}" alt="" loading="lazy" decoding="async" /></div>
+          <div class="cart-item__img"><img src="${esc(item.img)}" alt="" loading="lazy" decoding="async" /></div>
           <div class="cart-item__info">
-            <div class="cart-item__name">${PRODUCT.title || t("prod_title")}</div>
-            <div class="cart-item__variant">${PRODUCT.variant || t("js_variant")}</div>
+            <div class="cart-item__name">${esc(item.title || t("prod_title"))}</div>
+            <div class="cart-item__variant">${esc(item.variant || t("js_variant"))}</div>
             <div class="cart-item__price">${kr(item.price * item.qty)}</div>
             <div class="cart-item__qty">
               <button data-dec="${idx}" aria-label="Minska">−</button>
@@ -204,7 +257,7 @@
 
     const sum = totalSum();
     const n = totalQty();
-    const disc = packDiscountKr(n);
+    const disc = cartDiscountKr();
     $("#cartTotal").textContent = kr(sum - disc);
 
     count.textContent = n;
@@ -292,15 +345,17 @@
   /* ---------- Checkout (demo) ---------- */
   $("#checkout").addEventListener("click", () => {
     if (cart.length === 0) { toast(t("js_empty_toast")); return; }
-    // Clamp the outgoing quantity to a valid integer in [MIN_QTY, MAX_QTY].
-    // NOTE: this is only a convenience guard — the browser is not a trust boundary.
-    // The Cloudflare Worker MUST re-validate qty and check the request Origin server-side.
-    const qty = Math.min(MAX_QTY, Math.max(MIN_QTY, Math.trunc(totalQty()) || MIN_QTY));
-    // hand off to the Cloudflare Worker, which creates a Stripe Checkout session with the chosen quantity.
     // Pass the chosen site language (bb-lang) so the order-confirmation email goes out in SV or EN.
     const lang = (localStorage.getItem("bb-lang") || "sv") === "en" ? "en" : "sv";
-    const product = encodeURIComponent(PRODUCT.checkoutProduct || "tb6");
-    window.location.href = CHECKOUT_URL + "?qty=" + qty + "&lang=" + lang + "&product=" + product;
+    // Hand the WHOLE cart to the Worker as "items=id:qty,id:qty" (one line per
+    // product). The Worker is the trust boundary: it re-validates every id/qty,
+    // prices each line server-side, and creates one Stripe Checkout session with a
+    // line item per product. The per-item clamp here is only a convenience guard.
+    const items = cart
+      .map((i) => encodeURIComponent(i.checkoutProduct || "tb6") + ":" +
+        Math.min(MAX_QTY, Math.max(MIN_QTY, Math.trunc(i.qty) || MIN_QTY)))
+      .join(",");
+    window.location.href = CHECKOUT_URL + "?lang=" + lang + "&items=" + items;
   });
 
   /* ---------- Copy email links (e.g. FAQ "Kontakta oss") ---------- */
