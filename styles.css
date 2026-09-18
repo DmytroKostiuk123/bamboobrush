@@ -471,6 +471,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .breadcrumb .sep { margin: 0 7px; opacity: .5; }
 .pdp__brand { display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green-500); font-weight: 700; margin-bottom: 6px; }
 .pdp__sku { font-size: .8rem; color: var(--muted); margin: 6px 0 18px; }
+.pdp__compat { font-size: .9rem; line-height: 1.5; margin: 2px 0 18px; }
 .pdp__stock { display: inline-flex; align-items: center; gap: 6px; font-size: .9rem; color: var(--green-700); font-weight: 700; margin: 0 0 12px; }
 .pdp__delivery { font-size: .84rem; color: var(--muted); line-height: 1.9; margin-top: 16px; }
 .pdp-section { padding: 44px 0 0; }
