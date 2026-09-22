@@ -7,8 +7,8 @@
   // (CSP blocks inline <script>, so we use data-attributes, not window globals).
   // Without it we default to the 6-pack (tb6) so existing pages are unaffected.
   // title/variant fall back to the i18n dictionary (prod_title / js_variant).
-  function readProductConfig() {
-    const el = document.getElementById("bbProductConfig");
+  // Also used for standalone buttons carrying the same data-attrs (data-add-product).
+  function readProductConfig(el = document.getElementById("bbProductConfig")) {
     if (!el) return {};
     const d = el.dataset, cfg = {}, pd = {};
     if (d.id) cfg.id = d.id;
@@ -175,7 +175,8 @@
   }
 
   /* ---------- Cart logic ---------- */
-  function addToCart(qty = 1) {
+  function addToCart(qty = 1, prod = PRODUCT) {
+    const PRODUCT = prod;
     const found = cart.find((i) => i.id === PRODUCT.id);
     if (found) found.qty = Math.min(MAX_QTY, found.qty + qty);
     else cart.push({
@@ -347,6 +348,12 @@
       const qty = btn.hasAttribute("data-from-qty") ? pdpQty : 1;
       addToCart(qty);
     })
+  );
+
+  // Buttons that carry their own product (e.g. the shop cards on the start page),
+  // so one page can sell several products.
+  $$("[data-add-product]").forEach((btn) =>
+    btn.addEventListener("click", () => addToCart(1, readProductConfig(btn)))
   );
 
   /* ---------- Checkout (demo) ---------- */

@@ -416,6 +416,25 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .greenwash__macro figcaption { margin-top: 14px; font-size: .92rem; font-style: italic; color: #cfe0d0; }
 
 .greenwash__note { text-align: center; max-width: 560px; margin: 30px auto 0; font-family: var(--font-head); font-style: italic; font-size: 1.18rem; color: #fff; }
+/* Start-page shop cards inside the greenwash section */
+.gwshop { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 760px; margin: 40px auto 0; }
+.gwshop__card { background: var(--white); color: var(--ink); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform .25s; }
+.gwshop__card:hover { transform: translateY(-4px); }
+.gwshop__media { position: relative; display: block; aspect-ratio: 4 / 3; background: var(--green-100); overflow: hidden; }
+.gwshop__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+.gwshop__card:hover .gwshop__media img { transform: scale(1.04); }
+.gwshop__badge { position: absolute; top: 12px; left: 12px; z-index: 1; background: #2e7d4f; color: #fff; font-size: .78rem; font-weight: 700; padding: 5px 11px; border-radius: 999px; }
+.gwshop__body { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px; flex: 1; }
+.gwshop__body h3 { font-size: 1.15rem; line-height: 1.25; }
+.gwshop__body h3 a { color: inherit; text-decoration: none; }
+.gwshop__sub { color: var(--muted); font-size: .92rem; flex: 1; }
+.gwshop__row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin: 4px 0 6px; }
+.gwshop__price { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; color: var(--green-500); }
+.gwshop__deal { font-size: .82rem; font-weight: 700; color: var(--green-700); background: var(--green-100); padding: 3px 9px; border-radius: 999px; }
+.gwshop__more { text-align: center; font-size: .9rem; color: var(--muted); text-decoration: underline; margin-top: 2px; }
+.gwshop__more:hover { color: var(--ink); }
+@media (max-width: 560px) { .gwshop { grid-template-columns: 1fr; max-width: 400px; } }
+
 .greenwash__cta { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 32px; }
 .greenwash__link { color: var(--sand); text-decoration: underline; font-size: .95rem; }
 .greenwash__link:hover { opacity: .85; }
