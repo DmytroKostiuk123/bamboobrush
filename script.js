@@ -27,6 +27,9 @@
       checkoutProduct: "tb6", packDiscount: { 2: 40, 3: 100 } },
     readProductConfig()
   );
+  // Current volume-discount tables. A cart saved in localStorage keeps the table from when the
+  // item was added; these override it so the cart always matches the checkout Worker.
+  const PACK_DISCOUNTS = { tb6: { 2: 40, 3: 100 }, heads: { 3: 68 } };
   const MIN_QTY = 1;
   const MAX_QTY = 20;
   const CHECKOUT_URL = "https://bamboobrush-checkout.dmytro-kostiuk123.workers.dev/";
@@ -65,7 +68,8 @@
           checkoutProduct: String(i.checkoutProduct || i.id),
           title: i.title ? String(i.title) : "",
           variant: i.variant ? String(i.variant) : "",
-          packDiscount: (i.packDiscount && typeof i.packDiscount === "object") ? i.packDiscount : {},
+          packDiscount: PACK_DISCOUNTS[String(i.id)] ||
+            ((i.packDiscount && typeof i.packDiscount === "object") ? i.packDiscount : {}),
           qty: Math.min(MAX_QTY, Math.max(1, Math.trunc(+i.qty))),
         }));
     } catch (e) { return []; }

@@ -63,7 +63,7 @@
       gws_tb6_deal: "2 st: spara 40 kr",
       gws_heads_title: "Tandborsthuvud 4-pack",
       gws_heads_sub: "Passar Philips Sonicare. Bambu och naturborst.",
-      gws_heads_deal: "2 st: spara 29 kr",
+      gws_heads_deal: "2 st: fri frakt",
 
       prod_sticker: "Bästsäljare",
       prod_title: "Bambutandborste 6-pack",
@@ -287,7 +287,7 @@
       gws_tb6_deal: "Buy 2: save 40 kr",
       gws_heads_title: "Brush heads 4-pack",
       gws_heads_sub: "Fits Philips Sonicare. Bamboo and natural bristles.",
-      gws_heads_deal: "Buy 2: save 29 kr",
+      gws_heads_deal: "Buy 2: free shipping",
 
       prod_sticker: "Bestseller",
       prod_title: "Bamboo toothbrush 6-pack",
