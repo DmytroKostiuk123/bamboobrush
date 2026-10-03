@@ -12,7 +12,36 @@
     root.setAttribute("data-theme", saved || timeTheme());
   } catch (e) { root.setAttribute("data-theme", timeTheme()); }
 
+  // Language: Swedish pages live in /blogg/, English in /blogg/en/, linked with <link rel="alternate" hreflang>.
+  // A saved choice (bb-lang, shared with the shop) sends the visitor to their language version if it exists.
+  var lang = (root.getAttribute("lang") || "sv").slice(0, 2) === "en" ? "en" : "sv";
+  function altPath(l) {
+    var el = document.querySelector('link[rel="alternate"][hreflang="' + l + '"]');
+    if (!el) return null;
+    try { return new URL(el.getAttribute("href"), location.href).pathname; } catch (e) { return null; }
+  }
+  try {
+    var want = localStorage.getItem("bb-lang");
+    if ((want === "sv" || want === "en") && want !== lang) {
+      var p = altPath(want);
+      if (p) location.replace(p + location.hash);
+    }
+  } catch (e) {}
+
   document.addEventListener("DOMContentLoaded", function () {
+    var lt = document.getElementById("langToggle");
+    if (lt) {
+      var spans = lt.querySelectorAll("[data-lang]");
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].classList.toggle("is-active", spans[i].getAttribute("data-lang") === lang);
+      }
+      lt.addEventListener("click", function () {
+        var next = lang === "sv" ? "en" : "sv";
+        try { localStorage.setItem("bb-lang", next); } catch (e) {}
+        location.href = (altPath(next) || (next === "en" ? "/blogg/en/" : "/blogg/")) + location.hash;
+      });
+    }
+
     var t = document.getElementById("themeToggle");
     if (t) {
       t.setAttribute("aria-pressed", String(root.getAttribute("data-theme") === "dark"));
@@ -32,7 +61,7 @@
     var rt = document.querySelector("[data-reading-time]");
     if (rt && body) {
       var words = (body.innerText || "").trim().split(/\s+/).filter(Boolean).length;
-      rt.textContent = Math.max(1, Math.round(words / 200)) + " min läsning";
+      rt.textContent = Math.max(1, Math.round(words / 200)) + (lang === "en" ? " min read" : " min läsning");
     }
 
     // Auto table of contents built from the article's H2 headings

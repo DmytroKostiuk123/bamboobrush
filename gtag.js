@@ -56,15 +56,21 @@
   function showBanner() { if (banner) banner.hidden = false; }
 
   function build() {
+    // English on English pages (the blog's /en/ pages) or when the visitor picked EN in the shop.
+    var en = (document.documentElement.getAttribute("lang") || "").slice(0, 2) === "en";
+    try { if (localStorage.getItem("bb-lang") === "en") en = true; } catch (e) {}
+
     banner = document.createElement("div");
     banner.className = "cookiebar";
     banner.hidden = true;
     banner.setAttribute("role", "dialog");
-    banner.setAttribute("aria-label", "Cookie-samtycke");
+    banner.setAttribute("aria-label", en ? "Cookie consent" : "Cookie-samtycke");
 
     var p = document.createElement("p");
     p.className = "cookiebar__text";
-    p.innerHTML = 'Vi använder cookies för att mäta och förbättra våra annonser. Nödvändiga cookies (t.ex. språk och tema) används alltid. <a href="/policies/privacy-policy.html">Läs mer</a>.';
+    p.innerHTML = en
+      ? 'We use cookies to measure and improve our ads. Essential cookies (such as language and theme) are always used. <a href="/policies/privacy-policy.html">Read more</a>.'
+      : 'Vi använder cookies för att mäta och förbättra våra annonser. Nödvändiga cookies (t.ex. språk och tema) används alltid. <a href="/policies/privacy-policy.html">Läs mer</a>.';
     banner.appendChild(p);
 
     var actions = document.createElement("div");
@@ -73,13 +79,13 @@
     var no = document.createElement("button");
     no.type = "button";
     no.className = "btn btn--ghost cookiebar__btn";
-    no.textContent = "Neka";
+    no.textContent = en ? "Decline" : "Neka";
     no.addEventListener("click", function () { setConsent("denied"); });
 
     var yes = document.createElement("button");
     yes.type = "button";
     yes.className = "btn btn--primary cookiebar__btn";
-    yes.textContent = "Acceptera";
+    yes.textContent = en ? "Accept" : "Acceptera";
     yes.addEventListener("click", function () { setConsent("granted"); });
 
     actions.appendChild(no);
