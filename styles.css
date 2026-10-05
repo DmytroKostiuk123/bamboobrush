@@ -274,7 +274,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 /* ===== Product ===== */
 .product { padding: 84px 0; }
 .product__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.product__inner--noimg { grid-template-columns: minmax(0, 720px); }
+.product__main--empty { display: grid; place-items: center; }
+.product__placeholder { margin: 0; padding: 0 32px; text-align: center; color: var(--muted); font-style: italic; font-size: .95rem; }
 .product__main {
   position: relative; aspect-ratio: 1; border-radius: 28px;
   background: linear-gradient(160deg, var(--white), var(--green-100)); box-shadow: var(--shadow); overflow: hidden;
