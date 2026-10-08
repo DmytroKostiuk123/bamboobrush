@@ -171,7 +171,7 @@
       faq_q3: "Hur länge håller ett 6-pack?",
       faq_a3: "Tandläkare rekommenderar byte varannan månad. Ett 6-pack räcker alltså i cirka 1 år för en person.",
       faq_q4: "Vad kostar frakten?",
-      faq_a4: "Frakten kostar 49 kr med PostNord och är gratis när du handlar för minst 350 kr. Vill du hämta hos ett DHL-ombud kostar det 59 kr. Beställer du före kl 10 på en vardag skickar vi samma dag, annars nästa vardag. Leveransen tar normalt 1–3 arbetsdagar.",
+      faq_a4: "Frakten kostar 49 kr med PostNord och är gratis när du handlar för minst 350 kr. Vill du hämta hos ett DHL-ombud kostar det 59 kr, eller 19 kr om du handlar för minst 350 kr. Beställer du före kl 10 på en vardag skickar vi samma dag, annars nästa vardag. Leveransen tar normalt 1–3 arbetsdagar.",
       faq_q5: "Kan jag returnera om jag ändrar mig?",
       faq_a5: "Självklart. Du har 30 dagars öppet köp på oöppnade förpackningar. Kontakta oss så ordnar vi returen.",
 
@@ -395,7 +395,7 @@
       faq_q3: "How long does a 6-pack last?",
       faq_a3: "Dentists recommend replacing your brush every two months. So a 6-pack lasts about 1 year for one person.",
       faq_q4: "What does shipping cost?",
-      faq_a4: "Shipping is 49 kr with PostNord and free when you spend at least 350 kr. If you prefer to pick up at a DHL service point, it costs 59 kr. Order before 10 am on a weekday and we ship the same day, otherwise the next weekday. Delivery normally takes 1–3 business days.",
+      faq_a4: "Shipping is 49 kr with PostNord and free when you spend at least 350 kr. If you prefer to pick up at a DHL service point, it costs 59 kr, or 19 kr when you spend at least 350 kr. Order before 10 am on a weekday and we ship the same day, otherwise the next weekday. Delivery normally takes 1–3 business days.",
       faq_q5: "Can I return it if I change my mind?",
       faq_a5: "Of course. You have 30 days' right of return on unopened packages. Contact us and we'll arrange the return.",
 
