@@ -272,7 +272,7 @@
     const lines = [];
     if (disc > 0) lines.push(t("cart_discount", { amount: disc }));
     if (cart.length > 0) {
-      lines.push((n >= 2 || sum >= FREE_SHIP_THRESHOLD) ? t("cart_freeship") : t("js_ship_note"));
+      lines.push((sum - disc >= FREE_SHIP_THRESHOLD) ? t("cart_freeship") : t("js_ship_note"));
     }
     $("#cartShip").innerHTML = lines.join("<br>");
 
@@ -280,7 +280,7 @@
   }
 
   /* ---------- Free-shipping progress meter (product page) ---------- */
-  const FREE_SHIP_THRESHOLD = 350; // kr
+  const FREE_SHIP_THRESHOLD = 350; // kr, after volume discount – MUST match FREE_SHIP_FROM_KR in the checkout worker
   function renderMeter(wrap, sum) {
     const pct = Math.max(0, Math.min(100, Math.round((sum / FREE_SHIP_THRESHOLD) * 100)));
     const remaining = Math.max(0, FREE_SHIP_THRESHOLD - sum);
@@ -298,7 +298,7 @@
   // "antal", and it converges with the cart meter when you add. With an empty cart
   // (the usual case on a product page) that's simply pdpQty × price.
   function updateShipMeter() {
-    const cartSum = totalSum();
+    const cartSum = totalSum() - cartDiscountKr();
     $$(".ship-meter").forEach((wrap) => {
       const isCart = wrap.classList.contains("ship-meter--cart");
       renderMeter(wrap, isCart ? cartSum : cartSum + pdpQty * PRODUCT.price);
