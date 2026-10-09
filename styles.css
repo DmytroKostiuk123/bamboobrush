@@ -334,6 +334,12 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .card__icon { font-size: 2rem; margin-bottom: 14px; }
 .card h3 { font-size: 1.2rem; margin-bottom: 8px; }
 .card p { color: var(--muted); font-size: .94rem; }
+.card { display: flex; flex-direction: column; }
+.card__link {
+  margin-top: auto; padding-top: 14px; font-size: .88rem; font-weight: 600;
+  color: var(--green-500); text-decoration: none;
+}
+.card__link:hover { text-decoration: underline; }
 
 /* ===== Impact ===== */
 .impact { padding: 84px 0; background: var(--green-900); color: #eef5ee; }
@@ -347,6 +353,10 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
   font-weight: 600; font-size: .95rem; cursor: pointer; transition: background .2s, border-color .2s;
 }
 .impact__more:hover { background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .65); }
+.impact__blog { display: flex; flex-direction: column; gap: 6px; margin-top: 22px; }
+.impact__blog-label { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--sand); }
+.impact__blog a { color: #eef5ee; font-size: .95rem; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.35); }
+.impact__blog a:hover { text-decoration-color: currentColor; }
 .impact__stats { display: flex; gap: 28px; margin-top: 32px; flex-wrap: wrap; }
 
 /* ===== Modal ===== */

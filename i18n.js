@@ -124,6 +124,11 @@
       card4_h: "Skonsam mot emaljen",
       card4_p: "Torrt är galtborst styvt (3–6 GPa), men när man blöter ner den mjuknar den till ≤1 GPa – mjukare än nylon, som ligger kvar på 2–3 GPa även blött.",
 
+      card_more: "Läs mer i bloggen →",
+      imp_blog_label: "Fördjupa dig i bloggen",
+      imp_blog1: "Hur farligt är mikroplast egentligen?",
+      imp_blog2: "Så kan mikroplast påverka kroppen och cellerna",
+      imp_blog3: "Mikroplaster i tandborstar – kemin bakom",
       imp_eyebrow: "Visste du?",
       imp_h2: "Varför mikroplaster är farliga",
       imp_p: "Forskning visar att mikroplaster kan försvaga cellmembran, utlösa inflammation och härma hormoner i kroppen. Emaljen är hårdare än borststråna, så varje borstning nöter ner plasten och frigör små partiklar i munnen. Genom ett enkelt byte tar du bort en daglig plastkälla – för din egen hälsa.",
@@ -348,6 +353,11 @@
       card4_h: "Gentle on enamel",
       card4_p: "Dry, boar bristle is stiff (3–6 GPa), but once you wet it down it softens to ≤1 GPa – softer than nylon, which stays at 2–3 GPa even when wet.",
 
+      card_more: "Read more on the blog →",
+      imp_blog_label: "Dig deeper on the blog",
+      imp_blog1: "How dangerous are microplastics, really?",
+      imp_blog2: "How microplastics can affect the body and its cells",
+      imp_blog3: "Microplastics in toothbrushes – the chemistry behind it",
       imp_eyebrow: "Did you know?",
       imp_h2: "Why microplastics are harmful",
       imp_p: "Research shows microplastics can weaken cell membranes, trigger inflammation and mimic hormones in the body. Enamel is harder than the bristles, so every brushing wears down the plastic and releases tiny particles into your mouth. With one simple switch you remove a daily source of plastic – for your own health.",
@@ -503,6 +513,13 @@
 
     apply("data-i18n", "textContent");
     apply("data-i18n-html", "innerHTML");
+
+    // Blog links follow the language: data-blog="slug" -> blogg/slug.html or blogg/en/slug.html
+    var blogLinks = document.querySelectorAll("[data-blog]");
+    for (var b = 0; b < blogLinks.length; b++) {
+      var slug = blogLinks[b].getAttribute("data-blog");
+      blogLinks[b].setAttribute("href", "blogg/" + (lang === "en" ? "en/" : "") + slug + ".html");
+    }
 
     var toggle = document.getElementById("langToggle");
     if (toggle) {
