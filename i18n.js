@@ -91,6 +91,8 @@
       pdp_d_spec_3: "<strong>Handtag:</strong> naturlig bambu",
       pdp_d_spec_4: "<strong>Borst:</strong> naturborst (galtborst av keratin), medium hårdhet",
       pdp_d_spec_5: "<strong>Förpackning:</strong> papp",
+      pdp_d_blog_h: "Läs mer i bloggen",
+      pdp_d_blog_1: 'Varför stråna avgör om en tandborste är plastfri: <a href="/blogg/galtborst-vs-nylonborst.html">Galtborst vs nylonborst</a>. För- och nackdelar: <a href="/blogg/ar-bambutandborste-bra.html">Är bambutandborste bra?</a> När det är dags för en ny: <a href="/blogg/hur-ofta-byta-tandborste.html">Hur ofta ska man byta tandborste?</a> Till de minsta: <a href="/blogg/tandborste-barn.html">Tandborste för barn</a>.',
       pdp_d_comp_h: "Kompostering & återvinning",
       pdp_d_comp_1: 'När borsten är utsliten kan du kompostera hela den – både bambuhandtaget och galtborsten (keratin) bryts ner, så du behöver inte dra ut stråna. Vill du vara noggrann plockar du bort den lilla kopparklammern och återvinner den som metall. Läs mer i vår guide <a href="../blogg/kompostera-tandborsten.html">Så komposterar du din bambutandborste</a>.',
       pdp_rev_h: "Recensioner",
@@ -320,6 +322,8 @@
       pdp_d_spec_3: "<strong>Handle:</strong> natural bamboo",
       pdp_d_spec_4: "<strong>Bristles:</strong> natural boar hair (keratin), medium firmness",
       pdp_d_spec_5: "<strong>Packaging:</strong> cardboard",
+      pdp_d_blog_h: "Read more on the blog",
+      pdp_d_blog_1: 'Why the bristles decide whether a toothbrush is plastic-free: <a href="/blogg/en/galtborst-vs-nylonborst.html">Boar bristle vs nylon bristle</a>. Pros and cons: <a href="/blogg/en/ar-bambutandborste-bra.html">Are bamboo toothbrushes good?</a> When it is time for a new one: <a href="/blogg/en/hur-ofta-byta-tandborste.html">How often should you replace your toothbrush?</a> For the little ones: <a href="/blogg/en/tandborste-barn.html">Toothbrushes for children</a>.',
       pdp_d_comp_h: "Composting & recycling",
       pdp_d_comp_1: 'When the brush is worn out you can compost the whole thing – both the bamboo handle and the boar bristle (keratin) break down, so you don\'t need to pull out the bristles. If you want to be thorough, pick out the small copper staple and recycle it as metal. Read more in our guide <a href="../blogg/kompostera-tandborsten.html">How to compost your bamboo toothbrush</a>.',
       pdp_rev_h: "Reviews",
@@ -518,7 +522,7 @@
     var blogLinks = document.querySelectorAll("[data-blog]");
     for (var b = 0; b < blogLinks.length; b++) {
       var slug = blogLinks[b].getAttribute("data-blog");
-      blogLinks[b].setAttribute("href", "blogg/" + (lang === "en" ? "en/" : "") + slug + ".html");
+      blogLinks[b].setAttribute("href", "/blogg/" + (lang === "en" ? "en/" : "") + slug + ".html");
     }
 
     var toggle = document.getElementById("langToggle");
