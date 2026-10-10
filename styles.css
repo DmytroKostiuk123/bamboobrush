@@ -376,6 +376,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .modal__box h3 { font-size: 1.6rem; margin-bottom: 14px; padding-right: 28px; }
 .modal__box p { line-height: 1.75; margin-bottom: 14px; color: var(--ink); }
 .modal__box p:last-child { margin-bottom: 0; }
+.modal__box .modal__src { font-size: .82rem; line-height: 1.6; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; margin-top: 6px; }
+.modal__src a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .modal__close {
   position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%;
   border: none; background: var(--green-100); color: var(--ink); font-size: 1.1rem; cursor: pointer;
