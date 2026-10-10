@@ -325,6 +325,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 
 /* ===== Why / cards ===== */
 .why { padding: 84px 0; background: var(--white); }
+.why__more { display: inline-block; margin-top: 10px; font-weight: 600; color: var(--green-500); text-decoration: none; }
+.why__more:hover { text-decoration: underline; }
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .card {
   background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius);
