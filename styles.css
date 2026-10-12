@@ -273,7 +273,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 
 /* ===== Product ===== */
 .product { padding: 84px 0; }
-.product__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.product__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
 .product__main--empty { display: grid; place-items: center; }
 .product__placeholder { margin: 0; padding: 0 32px; text-align: center; color: var(--muted); font-style: italic; font-size: .95rem; }
 .product__main {
@@ -819,3 +819,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .mobile-nav__sub:has(.mnav-badge--soon):hover { opacity: .78; }
 /* Emphasise the in-stock items a touch */
 .nav-dd__item:has(.nav-dd__badge--in) .nav-dd__txt strong { font-weight: 800; }
+
+/* Produktsidor: bildens överkant i linje med rubriken (h1), inte med märkesraden ovanför */
+@media (min-width: 901px) {
+  .product__gallery { margin-top: 25px; }
+}
