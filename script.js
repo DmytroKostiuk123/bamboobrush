@@ -463,3 +463,48 @@
     else window.addEventListener("load", schedule, { once: true });
   })();
 })();
+
+/* ===== Produktmenyn: klick på "Produkt" fäller ut menyn i stället för att gå till 6-packet ===== */
+(() => {
+  "use strict";
+  const dds = document.querySelectorAll(".nav-dd");
+  if (!dds.length) return;
+
+  const close = (dd) => {
+    dd.classList.remove("is-open");
+    const t = dd.querySelector(".nav-dd__trigger");
+    if (t) t.setAttribute("aria-expanded", "false");
+  };
+
+  dds.forEach((dd) => {
+    const trigger = dd.querySelector(".nav-dd__trigger");
+    if (!trigger) return;
+    trigger.setAttribute("aria-expanded", "false");
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      const open = !dd.classList.contains("is-open");
+      dds.forEach(close);
+      if (open) {
+        dd.classList.add("is-open");
+        trigger.setAttribute("aria-expanded", "true");
+      } else {
+        trigger.blur(); // annars håller :focus-within menyn öppen
+      }
+    });
+  });
+
+  // Stäng vid klick utanför menyn eller Escape.
+  document.addEventListener("click", (e) => {
+    dds.forEach((dd) => { if (!dd.contains(e.target)) close(dd); });
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    dds.forEach((dd) => {
+      if (dd.classList.contains("is-open")) {
+        close(dd);
+        const t = dd.querySelector(".nav-dd__trigger");
+        if (t) t.focus();
+      }
+    });
+  });
+})();
