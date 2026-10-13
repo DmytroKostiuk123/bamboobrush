@@ -519,13 +519,12 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .pdp-compat ul { padding-left: 20px; }
 .pdp-compat li { margin-bottom: 3px; }
 .pdp-compat .pdp__note { margin: 0; }
+.pdp-compat .pdp-compat__row { margin-bottom: 10px; }
+.pdp-compat .pdp-compat__row strong { color: var(--ink); }
 @media (max-width: 900px) {
   .product__inner--compat { grid-template-areas: "gallery" "info" "compat"; }
 }
-@media (min-width: 901px) {
-  .pdp-compat ul { columns: 2; column-gap: 26px; }
-  .pdp-compat li { break-inside: avoid; }
-}
+
 .nowrap { white-space: nowrap; }
 .pdp__stock { display: inline-flex; align-items: center; gap: 6px; font-size: .9rem; color: var(--green-700); font-weight: 700; margin: 0 0 12px; }
 .pdp__delivery { font-size: .84rem; color: var(--muted); line-height: 1.9; margin-top: 16px; }
