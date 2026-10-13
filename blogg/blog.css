@@ -45,6 +45,7 @@
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
 }
 .article__cta p { color: var(--ink); font-weight: 600; margin: 0; }
+.article__cta-btns { display: flex; flex-wrap: wrap; gap: 10px; }
 
 /* FAQ (article) – note: markup is <details class="accordion">, so target details.accordion */
 .article__faq { max-width: 720px; margin: 48px 0 0; }
