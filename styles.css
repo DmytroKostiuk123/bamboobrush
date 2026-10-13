@@ -507,6 +507,25 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1
 .pdp__brand { display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .12em; color: var(--green-500); font-weight: 700; margin-bottom: 6px; }
 .pdp__sku { font-size: .8rem; color: var(--muted); margin: 6px 0 18px; }
 .pdp__compat { font-size: .9rem; line-height: 1.5; margin: 2px 0 18px; }
+.pdp__compat a { color: var(--green-500); text-decoration: underline; white-space: nowrap; }
+/* Borsthuvud: "Passar din Philips Sonicare?" alltid öppen, under bilderna på dator, under köpdelen i mobil */
+.product__inner--compat { grid-template-areas: "gallery info" "compat info"; row-gap: 28px; }
+.product__inner--compat .product__gallery { grid-area: gallery; }
+.product__inner--compat .product__info { grid-area: info; }
+.product__inner--compat .pdp-compat { grid-area: compat; }
+.pdp-compat { background: var(--faq-card); border: 1px solid var(--green-700); border-radius: var(--radius-sm); padding: 20px 22px 18px; scroll-margin-top: 90px; }
+.pdp-compat h2 { font-size: 1.15rem; margin: 0 0 10px; }
+.pdp-compat p, .pdp-compat ul { color: var(--muted); font-size: .92rem; line-height: 1.7; margin: 0 0 12px; }
+.pdp-compat ul { padding-left: 20px; }
+.pdp-compat li { margin-bottom: 3px; }
+.pdp-compat .pdp__note { margin: 0; }
+@media (max-width: 900px) {
+  .product__inner--compat { grid-template-areas: "gallery" "info" "compat"; }
+}
+@media (min-width: 901px) {
+  .pdp-compat ul { columns: 2; column-gap: 26px; }
+  .pdp-compat li { break-inside: avoid; }
+}
 .nowrap { white-space: nowrap; }
 .pdp__stock { display: inline-flex; align-items: center; gap: 6px; font-size: .9rem; color: var(--green-700); font-weight: 700; margin: 0 0 12px; }
 .pdp__delivery { font-size: .84rem; color: var(--muted); line-height: 1.9; margin-top: 16px; }
