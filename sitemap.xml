@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://bamboobrush.se/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://bamboobrush.se/assets/bambutandborste-plastfri-hero.jpg</image:loc></image:image>
@@ -88,7 +88,7 @@
   </url>
   <url>
     <loc>https://bamboobrush.se/blogg/hur-ofta-byta-tandborste.html</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -208,7 +208,7 @@
   </url>
   <url>
     <loc>https://bamboobrush.se/blogg/en/hur-ofta-byta-tandborste.html</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
